@@ -30,18 +30,18 @@ mongoose.connect(mongoURI)
     });
 
 // // Post the data to the database
-// app.post('/api/products', async (req, res) => {
-//     try {
-//         const productsData = req.body.Products;
-//         const products = await Product.insertMany(productsData);
-//         res.status(200).json(products);
-//     } catch (error) {
-//         res.status(500).json({ message: error.message });
-//     }
-// });
-Product.insertMany(productData)
-    .then(() => console.log("Products inserted"))
-    .catch(err => console.log("Error inserting products:", err));
+app.post('/api/products', async (req, res) => {
+    try {
+        const productsData = req.body.Products;
+        const products = await Product.insertMany(productsData);
+        res.status(200).json(products);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+});
+// Product.insertMany(productData)
+//     .then(() => console.log("Products inserted"))
+//     .catch(err => console.log("Error inserting products:", err));
 
 
 // Get product details by ID
