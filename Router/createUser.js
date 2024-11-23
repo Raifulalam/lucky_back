@@ -68,40 +68,35 @@ router.post('/loginUser', [
     if (!errors.isEmpty()) {
         return res.status(400).json({ errors: errors.array() });
     }
-
     const { email, password } = req.body;
 
     try {
-        // Find user by email
         const user = await User.findOne({ email });
         if (!user) {
             return res.status(401).json({ message: 'Invalid email or password' });
         }
 
-        // Compare the provided password with the hashed password in the database
         const comparePassword = await bcrypt.compare(password, user.password);
         if (!comparePassword) {
             return res.status(401).json({ message: 'Invalid email or password' });
         }
 
-        // Create JWT token payload including user info and role
         const data = {
             id: user._id,
             name: user.name,
-            role: user.role // Assuming the `role` field is present in your user schema
+            email: user.email,
+            role: user.role,
         };
 
-        // Sign the token with a secret and set an expiry time (optional)
-        const authToken = jwt.sign(data, process.env.JWT_SECRET, { expiresIn: '1h' });
+        // Sign the token with an expiry time (optional)
+        const authToken = jwt.sign(data, jwtSecret);//, { expiresIn: '1h' }
 
         return res.json({ success: true, authToken });
-
     } catch (error) {
         console.error(error);
         res.status(500).json({ success: false, message: 'Server error' });
     }
 });
-
 
 // Fetch User Profile Data (Protected Route)
 router.get('/userData', authenticateToken, async (req, res) => {
