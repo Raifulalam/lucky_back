@@ -152,11 +152,11 @@ router.delete('/users/:id', async function (req, res) {
         res.status(500).json({ success: false, message: 'Server error' });
     }
 });
-router.put('/api/users/:id', async (req, res) => {
+router.put('/api/users/:id', authenticateToken, async (req, res) => {
     const userId = req.params.id;  // Get user ID from the URL
     const updatedData = req.body;  // Get updated data from the request body
 
-
+    // You can add validation here if needed (e.g. check if name, email, etc. are valid)
 
     try {
         // Find user by ID and update their details
