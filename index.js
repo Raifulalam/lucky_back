@@ -46,7 +46,7 @@ app.get('/', (req, res) => {
 
 // User router (if applicable)
 app.use('/api', require('./Router/createUser'));
-app.use('/api', require('./Router/createProduct'));
+app.use('/api', require('./Router/createProducts'));
 
 // Get all products
 
