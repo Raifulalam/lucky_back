@@ -153,7 +153,7 @@ router.delete('/users/:id', async function (req, res) {
     }
 });
 // Backend route for updating user data
-router.put('/users/:id', authenticateToken, async (req, res) => {
+router.put('/users/:id', async (req, res) => {
     try {
         // Find the user by ID
         const user = await User.findById(req.params.id);
