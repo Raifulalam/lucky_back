@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const path = require('path');
 const cors = require('cors');
-const Product = require('./Models/products');
+
 const productData = require('./productsData');
 
 
