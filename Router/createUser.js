@@ -152,31 +152,24 @@ router.delete('/users/:id', async function (req, res) {
         res.status(500).json({ success: false, message: 'Server error' });
     }
 });
-router.put('/api/users/:id', authenticateToken, async (req, res) => {
-    const userId = req.params.id;  // Get user ID from the URL
-    const updatedData = req.body;  // Get updated data from the request body
-
-    // You can add validation here if needed (e.g. check if name, email, etc. are valid)
-
+// Backend route for updating user data
+router.put('/users/:id', authenticateToken, async (req, res) => {
     try {
-        // Find user by ID and update their details
-        const updatedUser = await User.findByIdAndUpdate(userId, updatedData, {
-            new: true, // Return the updated user object
-            runValidators: true // Ensure Mongoose runs validations on the updated data
-        });
-
-        // If the user is not found
-        if (!updatedUser) {
+        // Find the user by ID
+        const user = await User.findById(req.params.id);
+        if (!user) {
             return res.status(404).json({ message: 'User not found' });
         }
 
-        // Return the updated user
-        res.json(updatedUser);
+        // Update the user with the data from the request body
+        const updatedUser = await User.findByIdAndUpdate(req.params.id, req.body, { new: true });
+        res.json(updatedUser); // Send the updated user back in the response
     } catch (error) {
         console.error(error);
-        res.status(500).json({ message: 'Server error', error: error.message });
+        res.status(500).json({ message: 'Server error' });
     }
 });
+
 
 // Update User Profile Data (Protected Route)
 router.put('/userData', authenticateToken, async (req, res) => {
