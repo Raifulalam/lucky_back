@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const Product = require('./Models/products'); // Ensure your Product model is correct
+
+const Product = require('../Models/products')
 
 // Create multiple products
 router.post('/products', async (req, res) => {
