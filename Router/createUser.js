@@ -132,4 +132,42 @@ router.get('/users', async function (req, res) {
     }
 });
 
+//dlete users
+router.delete('/users/:id', async function (req, res) {
+    try {
+        const id = req.params.id;
+        // Find and delete the user by id
+        const user = await User.findByIdAndDelete(id);
+
+        // Check if the user was found and deleted
+        if (!user) {
+            return res.status(404).json({ success: false, message: 'User not found' });
+        }
+
+        // If user was deleted successfully, return the user data
+        res.status(200).json({ success: true, message: 'User deleted successfully', user });
+    } catch (error) {
+        console.error(error);
+        // Return a 500 status code for server errors
+        res.status(500).json({ success: false, message: 'Server error' });
+    }
+});
+
+
+// Update User Profile Data (Protected Route)
+router.put('/userData', authenticateToken, async (req, res) => {
+    try {
+        const user = await User.findById(req.user.id);  // Use the user ID from the JWT
+        if (!user) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+        const updatedUser = await User.findByIdAndUpdate(user._id, req.body, { new: true });
+        res.json(updatedUser);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ success: false, message: 'Server error' });
+    }
+});
+
+
 module.exports = router;
