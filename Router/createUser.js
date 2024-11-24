@@ -9,7 +9,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const authenticateToken = require('../authMiddleware');  // Import the JWT authentication middleware
 
-const jwtSecret = "mohammedRaifulAlamfromNepalBirgunj"; // Replace with a stronger secret in production
+const jwtSecret = "mohammedRaifulAlamfromNepalBirgunj";
 
 // User Registration Route
 router.post('/createUser', [
@@ -116,6 +116,16 @@ router.get('/userData', authenticateToken, async (req, res) => {
             created: user.created_at,
 
         });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ success: false, message: 'Server error' });
+    }
+});
+
+router.get('/users', async function (req, res) {
+    try {
+        const users = await User.find();
+        res.json(users);
     } catch (error) {
         console.error(error);
         res.status(500).json({ success: false, message: 'Server error' });
