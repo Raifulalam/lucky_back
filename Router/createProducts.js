@@ -1,40 +1,45 @@
 const express = require('express');
 const router = express.Router();
-const mongoose = require('mongoose');
-const Product = require('./Models/products');
+const Product = require('./Models/products'); // Ensure your Product model is correct
 
-
-app.post('/products', async (req, res) => {
+// Create multiple products
+router.post('/products', async (req, res) => {
     try {
-        const productsData = req.body.Products;
+        const productsData = req.body.Products;  // Assuming body contains an array of products
         const products = await Product.insertMany(productsData);
-        res.status(200).json(products);
+        res.status(200).json(products);  // Send back the inserted products
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
 });
 
-app.get('/products', (req, res) => {
-    Product.find()
-        .then(products => res.json(products))
-        .catch(err => res.status(500).json({ message: err.message }));
-});
-app.get('/productsDetails/:id', async (req, res) => {
+// Get all products
+router.get('/products', async (req, res) => {
     try {
-        const product = await Product.findById(req.params.id); // Find a product by its ID
-        if (!product) {
-            return res.status(404).json({ message: 'Product not found' }); // If no product found, return 404
-        }
-        res.status(200).json(product); // Return the found product
-    } catch (error) {
-        res.status(500).json({ message: error.message }); // Return any server error
+        const products = await Product.find();  // Retrieve all products from DB
+        res.status(200).json(products); // Send products to client
+    } catch (err) {
+        res.status(500).json({ message: err.message });
     }
 });
 
-//deleece product
-app.delete('/products/:id', async (req, res) => {
+// Get a product by ID
+router.get('/productsDetails/:id', async (req, res) => {
     try {
-        const product = await Product.findByIdAndDelete(req.params.id);
+        const product = await Product.findById(req.params.id); // Find a product by ID
+        if (!product) {
+            return res.status(404).json({ message: 'Product not found' });
+        }
+        res.status(200).json(product); // Return the found product
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+});
+
+// Delete product
+router.delete('/products/:id', async (req, res) => {
+    try {
+        const product = await Product.findByIdAndDelete(req.params.id);  // Find and delete product by ID
         if (!product) {
             return res.status(404).json({ message: 'Product not found' });
         }
@@ -44,20 +49,17 @@ app.delete('/products/:id', async (req, res) => {
     }
 });
 
-//edit product
-app.put('/products/:id', async (req, res) => {
+// Update a product
+router.put('/products/:id', async (req, res) => {
     try {
-        const product = await Product.findByIdAndUpdate(req.params.id, req.body, { new: true });
+        const product = await Product.findByIdAndUpdate(req.params.id, req.body, { new: true }); // Update the product
         if (!product) {
             return res.status(404).json({ message: 'Product not found' });
         }
-        res.status(200).json(product);
+        res.status(200).json(product);  // Return the updated product
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
 });
 
-
-
-
-module.exports = router;
+module.exports = router;  // Export the router so it can be used in the main app
