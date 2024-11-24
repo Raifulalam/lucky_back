@@ -152,7 +152,31 @@ router.delete('/users/:id', async function (req, res) {
         res.status(500).json({ success: false, message: 'Server error' });
     }
 });
+router.put('/api/users/:id', async (req, res) => {
+    const userId = req.params.id;  // Get user ID from the URL
+    const updatedData = req.body;  // Get updated data from the request body
 
+
+
+    try {
+        // Find user by ID and update their details
+        const updatedUser = await User.findByIdAndUpdate(userId, updatedData, {
+            new: true, // Return the updated user object
+            runValidators: true // Ensure Mongoose runs validations on the updated data
+        });
+
+        // If the user is not found
+        if (!updatedUser) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+
+        // Return the updated user
+        res.json(updatedUser);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Server error', error: error.message });
+    }
+});
 
 // Update User Profile Data (Protected Route)
 router.put('/userData', authenticateToken, async (req, res) => {
