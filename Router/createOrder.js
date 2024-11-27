@@ -6,7 +6,7 @@ const Order = require('../Models/order');
 
 
 
-router.post('orderData', async (req, res) => {
+router.post('/createOrder', async (req, res) => {
     const orderData = req.body;
     try {
         const newOrder = new Order({
