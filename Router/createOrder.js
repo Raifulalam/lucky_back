@@ -21,4 +21,12 @@ router.post('/createOrder', async (req, res) => {
         res.status(500).json({ message: 'Error creating order' });
     }
 });
+router.get('/orders', (req, res) => {
+    Order.find()
+        .then((orders) => {
+            res.json(orders);
+        }).catch((err) => {
+            res.status(500).json({ message: 'Error fetching orders' });
+        });
+})
 module.exports = router;
