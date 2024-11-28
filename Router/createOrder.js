@@ -13,7 +13,8 @@ router.post('/createOrder', async (req, res) => {
             items: orderData.items,
             totalPrice: orderData.totalPrice,
             tax: orderData.tax,
-            deliveryDate: orderData.deliveryDate
+            deliveryDate: orderData.deliveryDate,
+
         });
         await newOrder.save();
         res.status(201).json({ message: 'Order created successfully' });
