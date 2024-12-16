@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Complaint = require('../models/Complaint'); // Path to your Complaints model
+const Complaint = require('../Models/complaintsSchema');
 
 // Endpoint to handle complaint submission
 router.post('/submitComplaint', async (req, res) => {
