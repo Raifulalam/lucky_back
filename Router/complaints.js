@@ -80,7 +80,7 @@ router.post('/submitComplaint', upload.single('image'), async (req, res) => {
 // Endpoint to retrieve the image from the database
 router.get('/getComplaints', async (req, res) => {
     try {
-        // Retrieve all complaints from the database
+
         const complaints = await Complaint.find(); // Corrected 'complaints' to 'Complaint'
 
         // If no complaints found, return 404
@@ -97,6 +97,8 @@ router.get('/getComplaints', async (req, res) => {
         res.status(500).json({ success: false, message: 'Error retrieving complaints', error: err.message });
     }
 });
+
+
 
 
 module.exports = router;

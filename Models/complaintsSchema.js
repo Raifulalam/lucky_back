@@ -10,7 +10,12 @@ const complaintSchema = new mongoose.Schema({
     model: { type: String, required: true },
     warranty: { type: String, required: true },
     issue: { type: String, required: true },
-    image: { type: Buffer } // Store image as Buffer
+    image: { type: Buffer }, // Store image as Buffer
+    date: {
+        type: Date,
+        default: Date.now
+
+    }
 });
 
 module.exports = mongoose.model('Complaint', complaintSchema);
