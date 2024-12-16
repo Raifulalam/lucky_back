@@ -3,9 +3,11 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const path = require('path');
+
 const cors = require('cors');
 
 const productData = require('./productsData');
+
 
 
 // Load environment variables from .env file
