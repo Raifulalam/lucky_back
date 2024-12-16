@@ -78,21 +78,25 @@ router.post('/submitComplaint', upload.single('image'), async (req, res) => {
 });
 
 // Endpoint to retrieve the image from the database
-router.get('/getComplaintImage/:id', async (req, res) => {
+router.get('/getComplaints', async (req, res) => {
     try {
-        const complaint = await Complaint.findById(req.params.id);
+        // Retrieve all complaints from the database
+        const complaints = await Complaint.find(); // Corrected 'complaints' to 'Complaint'
 
-        if (!complaint || !complaint.image) {
-            return res.status(404).json({ success: false, message: 'Image not found' });
+        // If no complaints found, return 404
+        if (complaints.length === 0) {
+            return res.status(404).json({ success: false, message: 'Complaints Not Found' });
         }
 
-        res.set('Content-Type', 'image/jpeg'); // Set the appropriate content type (adjust if needed)
-        res.send(complaint.image); // Send the binary image data
+        // Send the complaints as response
+        res.json({ success: true, complaints });
 
     } catch (err) {
+        // Log and handle any errors that occur during the database operation
         console.error('Error:', err);
-        res.status(500).json({ success: false, message: 'Error retrieving image', error: err.message });
+        res.status(500).json({ success: false, message: 'Error retrieving complaints', error: err.message });
     }
 });
+
 
 module.exports = router;
