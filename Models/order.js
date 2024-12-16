@@ -13,16 +13,12 @@ const Orderschema = new Schema(
                 image: { type: String },
             },
         ],
-        user: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'User',
-            required: true,
-        },
+
         totalPrice: { type: Number, required: true },
         tax: { type: Number, required: true },
         deliveryDate: { type: String, required: true },
         address: { type: String, required: true },
-        
+
     },
     { timestamps: true }
 );
