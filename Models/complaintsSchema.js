@@ -1,21 +1,16 @@
 const mongoose = require('mongoose');
-const { Schema } = mongoose;
 
-const ComplaintsSchema = new Schema({
-    name: { type: String, required: true }, // Name of the customer
-    address: { type: String, required: true }, // Customer's address
-    phone: { type: String, required: true }, // Customer's phone number
-    province: { type: String, required: true }, // Province selected by the customer
-    district: { type: String, required: true }, // District selected by the customer
-    product: { type: String, required: true }, // Product name
-    model: { type: String, required: true }, // Product model number
-    warranty: { type: String, required: true }, // Warranty status (yes/no)
-    issue: { type: String, required: true }, // Description of the issue
-    image: { type: String, required: true }, // Product image (URL or file path)
-    createdAt: { type: Date, default: Date.now }, // Timestamp of when the complaint was created
+const complaintSchema = new mongoose.Schema({
+    name: { type: String, required: true },
+    address: { type: String, required: true },
+    phone: { type: String, required: true },
+    province: { type: String, required: true },
+    district: { type: String, required: true },
+    product: { type: String, required: true },
+    model: { type: String, required: true },
+    warranty: { type: String, required: true },
+    issue: { type: String, required: true },
+    image: { type: Buffer } // Store image as Buffer
 });
 
-// Create the model for complaints
-const Complaint = mongoose.model('Complaint', ComplaintsSchema);
-
-module.exports = Complaint;
+module.exports = mongoose.model('Complaint', complaintSchema);
