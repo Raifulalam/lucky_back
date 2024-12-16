@@ -4,78 +4,44 @@ const Complaint = require('../Models/complaintsSchema');
 const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
-
-// Ensure uploads directory exists
-const uploadDir = path.join(__dirname, '../uploads');
-if (!fs.existsSync(uploadDir)) {
-    fs.mkdirSync(uploadDir);
-}
-
-// Configure multer storage and file validation
+// Configure Multer storage
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, uploadDir); // Save uploaded files to the 'uploads' directory
+        cb(null, 'uploads/');  // Upload folder
     },
     filename: (req, file, cb) => {
-        // Save files with a unique name (timestamp + original file extension)
-        cb(null, Date.now() + path.extname(file.originalname));
+        cb(null, Date.now() + path.extname(file.originalname));  // Unique filename
     }
 });
 
-// Initialize multer with storage configuration and file filter for validation
-const upload = multer({
-    storage: storage,
-    fileFilter: (req, file, cb) => {
-        const fileTypes = /jpeg|jpg|png|gif/; // Allowed image types
-        const extname = fileTypes.test(path.extname(file.originalname).toLowerCase());
-        const mimetype = fileTypes.test(file.mimetype);
+const upload = multer({ storage: storage });
 
-        if (extname && mimetype) {
-            return cb(null, true);
-        } else {
-            return cb(new Error('Only image files are allowed (jpeg, jpg, png, gif)'));
-        }
-    },
-    limits: { fileSize: 5 * 1024 * 1024 } // Limit file size to 5MB
-});
-
-// Endpoint to handle complaint submission with image
+// Post endpoint to submit a complaint with image
 router.post('/submitComplaint', upload.single('image'), async (req, res) => {
     const { name, address, phone, province, district, product, model, warranty, issue } = req.body;
+    const imagePath = req.file ? `/uploads/${req.file.filename}` : null;  // Save the relative path of the image
 
-    // If the image is uploaded, get its file content as binary data (Buffer)
-    const image = req.file ? fs.readFileSync(req.file.path) : null;
+    const newComplaint = new Complaint({
+        name,
+        address,
+        phone,
+        province,
+        district,
+        product,
+        model,
+        warranty,
+        issue,
+        image: imagePath  // Store image URL in the database
+    });
 
     try {
-        const newComplaint = new Complaint({
-            name,
-            address,
-            phone,
-            province,
-            district,
-            product,
-            model,
-            warranty,
-            issue,
-            image // Store the image as Buffer in the database
-        });
-
-        await newComplaint.save(); // Save the complaint to the database
-
-        // Optionally, delete the image from the server after storing it in the database
-        if (req.file) {
-            fs.unlinkSync(req.file.path); // Clean up the uploaded image file from the server
-        }
-
+        await newComplaint.save();
         res.status(201).json({ success: true, message: 'Complaint submitted successfully!' });
     } catch (err) {
-        console.error('Error:', err);
-        if (err.message === 'Only image files are allowed (jpeg, jpg, png, gif)') {
-            return res.status(400).json({ success: false, message: 'Invalid file type. Only image files are allowed.' });
-        }
         res.status(500).json({ success: false, message: 'Error submitting complaint', error: err.message });
     }
 });
+
 
 // Endpoint to retrieve the image from the database
 router.get('/getComplaints', async (req, res) => {

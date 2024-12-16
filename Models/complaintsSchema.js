@@ -10,11 +10,10 @@ const complaintSchema = new mongoose.Schema({
     model: { type: String, required: true },
     warranty: { type: String, required: true },
     issue: { type: String, required: true },
-    image: { type: Buffer }, // Store image as Buffer
-    date: {
+    image: { type: String },
+    complaintdate: {
         type: Date,
         default: Date.now
-
     }
 });
 
