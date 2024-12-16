@@ -48,6 +48,7 @@ app.get('/', (req, res) => {
 app.use('/api', require('./Router/createUser'));
 app.use('/api', require('./Router/createProducts'));
 app.use('/api', require('./Router/createOrder'));
+app.use('/api', require('./Router/complaints'));
 
 // Get all products
 
