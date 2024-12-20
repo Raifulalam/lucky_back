@@ -3,6 +3,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const path = require('path');
+const Product = require('./Models/products');
+const ProductCategory = require('./Models/ProductsCategoryModel');
 
 const cors = require('cors');
 
