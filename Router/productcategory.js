@@ -3,7 +3,7 @@ const router = express.Router();  // Corrected here
 const ProductsCategory = require('../Models/ProductsCategoryModel');
 
 // Fetch categories with associated products
-router.get('/products', (req, res) => {
+router.get('/productCategories', (req, res) => {
     ProductsCategory.find()  // Use find() to get all categories
         .populate('products')  // Populate products field with actual product data
         .then(categories => {
