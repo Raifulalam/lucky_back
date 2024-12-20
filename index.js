@@ -56,6 +56,9 @@ app.use('/api', require('./Router/createUser'));
 app.use('/api', require('./Router/createProducts'));
 app.use('/api', require('./Router/createOrder'));
 app.use('/api', require('./Router/complaints'));
+const productCategoryRouter = require('./Router/productCategoryRouter');
+app.use('/api', productCategoryRouter);
+
 
 // Get all products
 
