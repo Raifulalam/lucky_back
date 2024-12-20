@@ -14,7 +14,7 @@ const products = [
         keywords: [
             "doubledoor", "rt28a32216r", "253", "refrigerator", "samsung",
         ],
-        category: "Refrigerator"
+        category: "Refrigerators"
     },
     {
         image: "image/doubledoor/1ECB5DF2089DD3E-RT28A32216R.png",
@@ -34,7 +34,7 @@ const products = [
             "refrigerator",
             "samsung",
         ],
-        category: "Refrigerator"
+        category: "Refrigerators"
     },
     {
         image: "image/doubledoor/9D5A8F698D4550F-RT28A32216U.png",
@@ -52,7 +52,7 @@ const products = [
             "refrigerator",
             "samsung",
         ],
-        category: "Refrigerator"
+        category: "Refrigerators"
     },
     {
         id: "83d4ca15-0f35-48f5-b7a3-1ea210004f2e",
@@ -71,7 +71,7 @@ const products = [
             "refrigerator",
             "samsung",
         ],
-        category: "Refrigerator"
+        category: "Refrigerators"
     },
     {
         id: "54e0eccd-8f36-462b-b68a-8182611d9add",
@@ -90,7 +90,7 @@ const products = [
             "refrigerator",
             "samsung",
         ],
-        category: "Refrigerator"
+        category: "Refrigerators"
     },
     {
         id: "3ebe75dc-64d2-4137-8860-1f5a963e534b",
@@ -109,7 +109,7 @@ const products = [
             "refrigerator",
             "samsung",
         ],
-        category: "Refrigerator"
+        category: "Refrigerators"
     },
     {
         id: "8c9c52b5-5a19-4bcb-a5d1-158a74287c53",
@@ -128,7 +128,7 @@ const products = [
             "refrigerator",
             "samsung",
         ],
-        category: "Refrigerator"
+        category: "Refrigerators"
     },
     {
         id: "dd82ca78-a18b-4e2a-9250-31e67412f98d",
@@ -147,7 +147,7 @@ const products = [
             "refrigerator",
             "samsung",
         ],
-        category: "Refrigerator"
+        category: "Refrigerators"
     },
     // Single door refrigerators
     {
@@ -167,7 +167,7 @@ const products = [
             "rr20c20c2rh",
             "samsung",
         ],
-        category: "Refrigerator"
+        category: "Refrigerators"
     },
     {
         id: "3fdfe8d6-9a15-4979-b459-585b0d0545b9",
@@ -186,7 +186,7 @@ const products = [
             "rr20t282zr8",
             "samsung",
         ],
-        category: "Refrigerator"
+        category: "Refrigerators"
     },
     {
         id: "58b4fc92-e98c-42aa-8c55-b6b79996769a",
@@ -205,7 +205,7 @@ const products = [
             "rr20c2z226u",
             "samsung",
         ],
-        category: "Refrigerator"
+        category: "Refrigerators"
     },
     {
         id: "5968897c-4d27-4872-89f6-5bcb052746d7",
@@ -224,7 +224,7 @@ const products = [
             "rr20c2z226r",
             "samsung",
         ],
-        category: "Refrigerator"
+        category: "Refrigerators"
     },
     {
         id: "aad29d11-ea98-41ee-9285-b916638cac4a",
@@ -243,7 +243,7 @@ const products = [
             "rr20m282zs8",
             "samsung",
         ],
-        category: "Refrigerator"
+        category: "Refrigerators"
     }
 ];
 
