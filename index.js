@@ -59,6 +59,7 @@ app.use('/api', require('./Router/createProducts'));
 app.use('/api', require('./Router/createOrder'));
 app.use('/api', require('./Router/complaints'));
 app.use('/api', require('./Router/productcategory'));
+app.use('/api', require('./Router/contactMessage'));
 
 
 // Get all products
