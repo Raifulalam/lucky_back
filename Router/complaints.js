@@ -4,6 +4,13 @@ const Complaint = require('../Models/complaintsSchema');
 const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
+
+// Ensure uploads folder exists, create it if it doesn't
+const uploadsDir = path.join(__dirname, 'uploads');
+if (!fs.existsSync(uploadsDir)) {
+    fs.mkdirSync(uploadsDir);
+}
+
 // Configure Multer storage
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -14,7 +21,25 @@ const storage = multer.diskStorage({
     }
 });
 
-const upload = multer({ storage: storage });
+// Multer settings for file size and file type validation
+const upload = multer({
+    storage: storage,
+    limits: { fileSize: 5 * 1024 * 1024 }, // Limit to 5MB
+    fileFilter: (req, file, cb) => {
+        const fileTypes = /jpeg|jpg|png|gif/;
+        const extname = fileTypes.test(path.extname(file.originalname).toLowerCase());
+        const mimetype = fileTypes.test(file.mimetype);
+
+        if (extname && mimetype) {
+            return cb(null, true);
+        } else {
+            return cb(new Error('Only image files are allowed.'));
+        }
+    }
+});
+
+// Serve static files from the 'uploads' folder
+router.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Post endpoint to submit a complaint with image
 router.post('/submitComplaint', upload.single('image'), async (req, res) => {
@@ -36,18 +61,21 @@ router.post('/submitComplaint', upload.single('image'), async (req, res) => {
 
     try {
         await newComplaint.save();
-        res.status(201).json({ success: true, message: 'Complaint submitted successfully!' });
+        res.status(201).json({
+            success: true,
+            message: 'Complaint submitted successfully!',
+            data: { complaintId: newComplaint._id }
+        });
     } catch (err) {
+        console.error('Error submitting complaint:', err);  // Log the error
         res.status(500).json({ success: false, message: 'Error submitting complaint', error: err.message });
     }
 });
 
-
-// Endpoint to retrieve the image from the database
+// Endpoint to retrieve the complaints from the database
 router.get('/getComplaints', async (req, res) => {
     try {
-
-        const complaints = await Complaint.find(); // Corrected 'complaints' to 'Complaint'
+        const complaints = await Complaint.find();
 
         // If no complaints found, return 404
         if (complaints.length === 0) {
@@ -56,15 +84,10 @@ router.get('/getComplaints', async (req, res) => {
 
         // Send the complaints as response
         res.json({ success: true, complaints });
-
     } catch (err) {
-        // Log and handle any errors that occur during the database operation
-        console.error('Error:', err);
+        console.error('Error retrieving complaints:', err); // Log the error
         res.status(500).json({ success: false, message: 'Error retrieving complaints', error: err.message });
     }
 });
-
-
-
 
 module.exports = router;
