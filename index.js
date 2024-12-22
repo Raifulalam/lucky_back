@@ -34,11 +34,11 @@ mongoose.connect(mongoURI)
         console.log('Error connecting to MongoDB:', err);
     });
 
-// // Post the data to the database
+// Post the data to the database
 
-// Product.insertMany(productData)
-//     .then(() => console.log("Products inserted"))
-//     .catch(err => console.log("Error inserting products:", err));
+Product.insertMany(productData)
+    .then(() => console.log("Products inserted"))
+    .catch(err => console.log("Error inserting products:", err));
 
 
 // insert productCategory
