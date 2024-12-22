@@ -28,6 +28,15 @@ router.post('/createOrder', async (req, res) => {
         return res.status(400).json({ message: 'Address is required' });
     }
 
+    // Validate new fields
+    if (!orderData.postalCode) {
+        return res.status(400).json({ message: 'Postal code is required' });
+    }
+
+    if (!orderData.country) {
+        return res.status(400).json({ message: 'Country is required' });
+    }
+
     try {
         // Create a new order
         const newOrder = new Order({
@@ -35,7 +44,13 @@ router.post('/createOrder', async (req, res) => {
             totalPrice: orderData.totalPrice,
             tax: orderData.tax,
             deliveryDate: orderData.deliveryDate,
-            address: orderData.address, // Ensure the address is included
+            address: orderData.address,
+            phone: orderData.phone,
+            name: orderData.name,
+            postalCode: orderData.postalCode,  // Added postal code
+            country: orderData.country,        // Added country
+            deliveryInstructions: orderData.deliveryInstructions,  // Added delivery instructions
+            additionalPhone: orderData.additionalPhone  // Added additional phone number
         });
 
         // Save the order to the database
