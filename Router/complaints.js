@@ -43,13 +43,13 @@ router.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Post endpoint to submit a complaint with image
 router.post('/submitComplaint', upload.single('image'), async (req, res) => {
-    // Handle missing file error
     if (!req.file) {
+        console.error('No image file uploaded.');
         return res.status(400).json({ success: false, message: 'No image file uploaded.' });
     }
 
     const { name, address, phone, province, district, product, model, warranty, issue } = req.body;
-    const imagePath = `/uploads/${req.file.filename}`;  // Relative path for the image
+    const imagePath = `/uploads/${req.file.filename}`;
 
     const newComplaint = new Complaint({
         name,
@@ -61,11 +61,12 @@ router.post('/submitComplaint', upload.single('image'), async (req, res) => {
         model,
         warranty,
         issue,
-        image: imagePath  // Store image URL in the database
+        image: imagePath
     });
 
     try {
         await newComplaint.save();
+        console.log('Complaint saved:', newComplaint);
         res.status(201).json({
             success: true,
             message: 'Complaint submitted successfully!',
@@ -76,6 +77,7 @@ router.post('/submitComplaint', upload.single('image'), async (req, res) => {
         res.status(500).json({ success: false, message: 'Error submitting complaint', error: err.message });
     }
 });
+
 
 // Endpoint to retrieve the complaints from the database
 router.get('/getComplaints', async (req, res) => {
