@@ -4,8 +4,8 @@ const { Schema } = mongoose;
 const productSchema = new Schema({
     image: String,
     name: String,
-    link: String,
-    details: String,
+    description: String,
+    modleNumber: String,
     rating: {
         stars: Number,
         count: Number
