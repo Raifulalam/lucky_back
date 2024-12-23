@@ -8,7 +8,7 @@ const ProductCategory = require('./Models/ProductsCategoryModel');
 
 const cors = require('cors');
 
-// const productData = require('./productsData');
+const productData = require('./productsData');
 // const productCategories = require('./productsCategories');
 
 
