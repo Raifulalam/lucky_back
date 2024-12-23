@@ -33,6 +33,7 @@ const upload = multer({
         if (extname && mimetype) {
             return cb(null, true);
         } else {
+            req.fileValidationError = 'Only image files are allowed.';
             return cb(new Error('Only image files are allowed.'));
         }
     }
@@ -43,6 +44,11 @@ router.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Post endpoint to submit a complaint with image
 router.post('/submitComplaint', upload.single('image'), async (req, res) => {
+    // Handle Multer errors
+    if (req.fileValidationError) {
+        return res.status(400).json({ success: false, message: req.fileValidationError });
+    }
+
     if (!req.file) {
         console.error('No image file uploaded.');
         return res.status(400).json({ success: false, message: 'No image file uploaded.' });
@@ -77,7 +83,6 @@ router.post('/submitComplaint', upload.single('image'), async (req, res) => {
         res.status(500).json({ success: false, message: 'Error submitting complaint', error: err.message });
     }
 });
-
 
 // Endpoint to retrieve the complaints from the database
 router.get('/getComplaints', async (req, res) => {
