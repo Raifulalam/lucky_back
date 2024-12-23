@@ -77,7 +77,6 @@ router.post('/submitComplaint', upload.single('image'), async (req, res) => {
     }
 });
 
-
 // Endpoint to retrieve the complaints from the database
 router.get('/getComplaints', async (req, res) => {
     try {
