@@ -5,13 +5,16 @@ const Product = require('../Models/products');
 // Create multiple products
 router.post('/products', async (req, res) => {
     try {
-        const productsData = req.body.Products;  // Assuming body contains an array of products
-        const products = await Product.insertMany(productsData);
-        res.status(200).json(products);  // Send back the inserted products
+        // Assuming the body contains a single product object
+        const productData = req.body;
+        const product = new Product(productData);
+        await product.save();  // Save the new product in the database
+        res.status(200).json(product);  // Send back the added product
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
 });
+
 
 // Get all products or filter by category
 router.get('/products', async (req, res) => {
