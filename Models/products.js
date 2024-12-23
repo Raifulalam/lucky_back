@@ -13,7 +13,9 @@ const productSchema = new Schema({
     mrp: Number,
     price: Number,
     keywords: [String],
-    category: String // You can optionally link categories here too
+    category: String,
+    capacity: String,
+    brand: String,
 });
 
 module.exports = mongoose.model('Product', productSchema);

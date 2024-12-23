@@ -36,9 +36,9 @@ mongoose.connect(mongoURI)
 
 // Post the data to the database
 
-// Product.insertMany(productData)
-//     .then(() => console.log("Products inserted"))
-//     .catch(err => console.log("Error inserting products:", err));
+Product.insertMany(productData)
+    .then(() => console.log("Products inserted"))
+    .catch(err => console.log("Error inserting products:", err));
 
 
 // // insert productCategory

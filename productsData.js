@@ -1,311 +1,592 @@
 const mongoose = require('mongoose');
 const products = [
-    // Refrigerators
     {
-        image: "image/doubledoor/9D5A8F698D4550F-RT28A32216U.png",
-        name: "RT28A32216R Samsung Double Door Refrigerator with Digital Inverter Technology, 253L",
-        link: "details.html",
-        details: "Refrigerator of 100l Samsung 22452",
-        rating: {
-            stars: 4.5,
-            count: 87
-        },
-        mrp: 60990,
-        price: 51000,
-        keywords: [
-            "doubledoor", "rt28a32216r", "253", "refrigerator", "samsung",
-        ],
-        category: "Refrigerators"
+        "name": "UA65DU7700RSHE",
+        "model": "UA65DU7700RSHE",
+        "mrp": 143990,
+        "price": 138900,
+        "keywords": ["UHD", "65 inch"],
+        "category": "LEDTelevisions",
+        "image": "http://example.com/images/UA65DU7700RSHE.jpg",
+        "description": "65 inch UHD TV with vivid colors and great contrast for an immersive home theater experience.",
+        "brand": "Samsung",
+        "capacity": "65 inches"
     },
     {
-        image: "image/doubledoor/11DEAB55E1C3117-RT37C4521S8.png",
-        name: "RT37C4521S8 Samsung Double Door Refrigerator, 345L",
-        rating: {
-            stars: 5,
-            count: 219
-        },
-        mrp: 84990,
-        price: 71000,
-        keywords: [
-            "doubledoor", "rt37c4521s8", "345", "refrigerator", "samsung",
-        ],
-        category: "Refrigerators"
+        "name": "UA75DU8000RSHE",
+        "model": "UA75DU8000RSHE",
+        "mrp": 286990,
+        "price": 233400,
+        "keywords": ["UHD", "75 inch"],
+        "category": "LEDTelevisions",
+        "image": "http://example.com/images/UA75DU8000RSHE.jpg",
+        "description": "75 inch UHD TV offering breathtaking clarity and vibrant colors for a superior viewing experience.",
+        "brand": "Samsung",
+        "capacity": "75 inches"
     },
     {
-        image: "image/doubledoor/LG-GLT255.png",
-        name: "LG GLT255 Double Door Refrigerator, 255L",
-        rating: {
-            stars: 4.6,
-            count: 300
-        },
-        mrp: 59990,
-        price: 51000,
-        keywords: [
-            "doubledoor", "lg", "255", "refrigerator",
-        ],
-        category: "Refrigerators"
+        "name": "UA85BU8000RXHE",
+        "model": "UA85BU8000RXHE",
+        "mrp": 393990,
+        "price": 338900,
+        "keywords": ["UHD", "85 inch"],
+        "category": "LEDTelevisions",
+        "image": "http://example.com/images/UA85BU8000RXHE.jpg",
+        "description": "85 inch UHD TV with ultra-clear resolution and enhanced color accuracy for larger spaces.",
+        "brand": "Samsung",
+        "capacity": "85 inches"
     },
     {
-        image: "image/doubledoor/CG-DoubleDoor-265L.png",
-        name: "CG 265L Double Door Refrigerator",
-        rating: {
-            stars: 4.4,
-            count: 155
-        },
-        mrp: 50990,
-        price: 43000,
-        keywords: [
-            "doubledoor", "cg", "265", "refrigerator",
-        ],
-        category: "Refrigerators"
+        "name": "UA85CU8000RSHE",
+        "model": "UA85CU8000RSHE",
+        "mrp": 393990,
+        "price": 361200,
+        "keywords": ["UHD", "85 inch"],
+        "category": "LEDTelevisions",
+        "image": "http://example.com/images/UA85CU8000RSHE.jpg",
+        "description": "85 inch UHD LED TV offering enhanced viewing with deep contrast and realistic colors.",
+        "brand": "Samsung",
+        "capacity": "85 inches"
     },
     {
-        image: "image/doubledoor/Whirlpool-WD255.png",
-        name: "Whirlpool 255L Double Door Refrigerator",
-        rating: {
-            stars: 4.7,
-            count: 250
-        },
-        mrp: 63990,
-        price: 53000,
-        keywords: [
-            "doubledoor", "whirlpool", "255", "refrigerator",
-        ],
-        category: "Refrigerators"
+        "name": "UA85DU8000RSHE",
+        "model": "UA85DU8000RSHE",
+        "mrp": 393990,
+        "price": 372300,
+        "keywords": ["UHD", "85 inch"],
+        "category": "LEDTelevisions",
+        "image": "http://example.com/images/UA85DU8000RSHE.jpg",
+        "description": "85 inch UHD LED TV with superior picture quality, perfect for movie lovers and sports enthusiasts.",
+        "brand": "Samsung",
+        "capacity": "85 inches"
     },
     {
-        image: "image/doubledoor/Haier-HR265.png",
-        name: "Haier 265L Double Door Refrigerator",
-        rating: {
-            stars: 4.6,
-            count: 210
-        },
-        mrp: 57990,
-        price: 49000,
-        keywords: [
-            "doubledoor", "haier", "265", "refrigerator",
-        ],
-        category: "Refrigerators"
-    },
-
-    // Washing Machines
-    {
-        id: "89bf2e77-02d4-4be3-8484-b897ad0bcf9a",
-        image: "image/washingmachine/LG-T8.png",
-        name: "LG T8 Top Load Washing Machine, 8KG",
-        rating: {
-            stars: 4.5,
-            count: 200
-        },
-        mrp: 45000,
-        price: 38000,
-        keywords: [
-            "topload", "lg", "8kg", "washingmachine", "digitalinverter",
-        ],
-        category: "WashingMachines"
+        "name": "QA55Q60CARXHE",
+        "model": "QA55Q60CARXHE",
+        "mrp": 179990,
+        "price": 133400,
+        "keywords": ["QLED", "55 inch"],
+        "category": "LEDTelevisions",
+        "image": "http://example.com/images/QA55Q60CARXHE.jpg",
+        "description": "55 inch QLED TV with stunning color accuracy, perfect for vibrant, lifelike visuals.",
+        "brand": "Samsung",
+        "capacity": "55 inches"
     },
     {
-        id: "bd59c562-4a69-4f7f-bfdd-b28bb957e7cc",
-        image: "image/washingmachine/Whirlpool-Fuzzy.png",
-        name: "Whirlpool 7.5KG Fuzzy Logic Washing Machine",
-        rating: {
-            stars: 4.3,
-            count: 170
-        },
-        mrp: 38000,
-        price: 31000,
-        keywords: [
-            "topload", "whirlpool", "7.5kg", "washingmachine", "fuzzylogic",
-        ],
-        category: "WashingMachines"
+        "name": "QA55Q60CARSHE",
+        "model": "QA55Q60CARSHE",
+        "mrp": 179990,
+        "price": 133400,
+        "keywords": ["QLED", "55 inch"],
+        "category": "LEDTelevisions",
+        "image": "http://example.com/images/QA55Q60CARSHE.jpg",
+        "description": "55 inch QLED TV with Quantum Dot technology, delivering rich colors and crystal-clear clarity.",
+        "brand": "Samsung",
+        "capacity": "55 inches"
     },
     {
-        id: "89c34e27-f41f-4696-8fbd-9c03e2746d2f",
-        image: "image/washingmachine/Haier-HW105.png",
-        name: "Haier 10KG Top Load Washing Machine",
-        rating: {
-            stars: 4.6,
-            count: 250
-        },
-        mrp: 55000,
-        price: 45000,
-        keywords: [
-            "topload", "haier", "10kg", "washingmachine",
-        ],
-        category: "WashingMachines"
+        "name": "QA55Q60DARSHE",
+        "model": "QA55Q60DARSHE",
+        "mrp": 179990,
+        "price": 144400,
+        "keywords": ["QLED", "55 inch"],
+        "category": "LEDTelevisions",
+        "image": "http://example.com/images/QA55Q60DARSHE.jpg",
+        "description": "55 inch QLED TV with Dynamic Crystal Color for enhanced brightness and color details.",
+        "brand": "Samsung",
+        "capacity": "55 inches"
     },
     {
-        id: "36c7084d-3b60-4700-a5b0-8fd5a1d35e9a",
-        image: "image/washingmachine/Samsung-WM10.png",
-        name: "Samsung 10KG Front Load Washing Machine",
-        rating: {
-            stars: 4.7,
-            count: 180
-        },
-        mrp: 65000,
-        price: 53000,
-        keywords: [
-            "frontload", "samsung", "10kg", "washingmachine",
-        ],
-        category: "WashingMachines"
-    },
-
-    // Air Conditioners
-    {
-        id: "1a44b2c4-ff4f-492e-b7fc-63f0d91467fc",
-        image: "image/airconditioner/Samsung-AR18.png",
-        name: "Samsung AR18 Air Conditioner, 1.5 Ton",
-        rating: {
-            stars: 4.7,
-            count: 120
-        },
-        mrp: 55000,
-        price: 46000,
-        keywords: [
-            "airconditioner", "samsung", "1.5ton", "ac", "digitalinverter",
-        ],
-        category: "AirConditioners"
+        "name": "QA65Q60CARSHE",
+        "model": "QA65Q60CARSHE",
+        "mrp": 250990,
+        "price": 200000,
+        "keywords": ["QLED", "65 inch"],
+        "category": "LEDTelevisions",
+        "image": "http://example.com/images/QA65Q60CARSHE.jpg",
+        "description": "65 inch QLED TV with amazing contrast and immersive audio for an exceptional viewing experience.",
+        "brand": "Samsung",
+        "capacity": "65 inches"
     },
     {
-        id: "4c7fd3c6-93ff-4b77-bf98-2f47c8c3f2b7",
-        image: "image/airconditioner/LG-LS-Q18CNZA.png",
-        name: "LG LS-Q18CNZA Air Conditioner, 1.5 Ton",
-        rating: {
-            stars: 4.6,
-            count: 98
-        },
-        mrp: 53000,
-        price: 45000,
-        keywords: [
-            "airconditioner", "lg", "1.5ton", "ac",
-        ],
-        category: "AirConditioners"
+        "name": "QA65Q60DARSHE",
+        "model": "QA65Q60DARSHE",
+        "mrp": 250990,
+        "price": 222300,
+        "keywords": ["QLED", "65 inch"],
+        "category": "LEDTelevisions",
+        "image": "http://example.com/images/QA65Q60DARSHE.jpg",
+        "description": "65 inch QLED TV with Dynamic HDR for stunning picture quality and clear, vibrant details.",
+        "brand": "Samsung",
+        "capacity": "65 inches"
     },
     {
-        id: "6f998f7a-fc5b-4722-94c1-7ed4b02f66da",
-        image: "image/airconditioner/Whirlpool-AC18.png",
-        name: "Whirlpool 1.5 Ton Air Conditioner",
-        rating: {
-            stars: 4.6,
-            count: 150
-        },
-        mrp: 54000,
-        price: 46000,
-        keywords: [
-            "airconditioner", "whirlpool", "1.5ton", "ac",
-        ],
-        category: "AirConditioners"
-    },
-
-    // Home Appliances
-    {
-        id: "c5e3b810-f7e5-4748-a990-f8f31c5e91ed",
-        image: "image/homeappliance/Whirlpool-Microwave.png",
-        name: "Whirlpool 20L Microwave Oven",
-        rating: {
-            stars: 4.4,
-            count: 75
-        },
-        mrp: 15000,
-        price: 12000,
-        keywords: [
-            "microwave", "whirlpool", "oven", "homeappliance",
-        ],
-        category: "HomeAppliances"
+        "name": "QA75Q60CARSHE",
+        "model": "QA75Q60CARSHE",
+        "mrp": 340990,
+        "price": 266700,
+        "keywords": ["QLED", "75 inch"],
+        "category": "LEDTelevisions",
+        "image": "http://example.com/images/QA75Q60CARSHE.jpg",
+        "description": "75 inch QLED TV offering deep blacks and brighter whites, perfect for large home theaters.",
+        "brand": "Samsung",
+        "capacity": "75 inches"
     },
     {
-        id: "3b0a249d-8965-45b9-bb51-ff9dfffbf9d4",
-        image: "image/homeappliance/LG-Blender.png",
-        name: "LG 600W Blender",
-        rating: {
-            stars: 4.2,
-            count: 60
-        },
-        mrp: 8000,
-        price: 6500,
-        keywords: [
-            "blender", "lg", "homeappliance",
-        ],
-        category: "HomeAppliances"
-    },
-
-    // Kitchen Appliances
-    {
-        id: "3498bf76-d55e-4378-b8d1-fdd35a6f7c0e",
-        image: "image/kitchenappliance/LG-Refrigerator.png",
-        name: "LG 270L Double Door Refrigerator",
-        rating: {
-            stars: 4.8,
-            count: 230
-        },
-        mrp: 51000,
-        price: 43000,
-        keywords: [
-            "doubledoor", "lg", "kitchenappliance", "refrigerator",
-        ],
-        category: "KitchenAppliances"
+        "name": "QA75Q60DARSHE",
+        "model": "QA75Q60DARSHE",
+        "mrp": 340990,
+        "price": 283400,
+        "keywords": ["QLED", "75 inch"],
+        "category": "LEDTelevisions",
+        "image": "http://example.com/images/QA75Q60DARSHE.jpg",
+        "description": "75 inch QLED TV with Dynamic Crystal Color for brighter whites and deeper blacks, delivering cinematic quality in your living room.",
+        "brand": "Samsung",
+        "capacity": "75 inches"
     },
     {
-        id: "b77c6ed5-1fd6-4207-b238-1b8b6993a732",
-        image: "image/kitchenappliance/Whirlpool-Dishwasher.png",
-        name: "Whirlpool Dishwasher 12 Place Settings",
-        rating: {
-            stars: 4.5,
-            count: 45
-        },
-        mrp: 25000,
-        price: 21000,
-        keywords: [
-            "dishwasher", "whirlpool", "kitchenappliance",
-        ],
-        category: "KitchenAppliances"
-    },
-
-    // Music & Home Theater
-    {
-        id: "ada7db24-cf3f-4de5-bf87-1cf2e520568a",
-        image: "image/musicht/sony-home-theater.png",
-        name: "Sony 5.1 Channel Home Theater System",
-        rating: {
-            stars: 4.5,
-            count: 200
-        },
-        mrp: 25000,
-        price: 22000,
-        keywords: [
-            "hometheater", "sony", "sound", "music",
-        ],
-        category: "MusicHomeTheater"
+        "name": "RR20C20C2GS/IM",
+        "model": "RR20C20C2GS/IM",
+        "mrp": 33490,
+        "price": 28500,
+        "keywords": ["Single Door", "192 L"],
+        "category": "Refrigerators",
+        "image": "http://example.com/images/RR20C20C2GS/IM.jpg",
+        "description": "192 L Single Door Refrigerator with a sleek design and energy-efficient cooling system, perfect for smaller households.",
+        "brand": "Samsung",
+        "capacity": "192 L"
     },
     {
-        id: "6d9c04fa-d07f-4c87-b3ad-bc1a87bc2cd6",
-        image: "image/musicht/Samsung-Soundbar.png",
-        name: "Samsung 2.1 Channel Soundbar with Subwoofer",
-        rating: {
-            stars: 4.6,
-            count: 180
-        },
-        mrp: 18000,
-        price: 15000,
-        keywords: [
-            "soundbar", "samsung", "hometheater", "music",
-        ],
-        category: "MusicHomeTheater"
+        "name": "RR20C20C2RH/IM",
+        "model": "RR20C20C2RH/IM",
+        "mrp": 32990,
+        "price": 27500,
+        "keywords": ["Single Door", "192 L"],
+        "category": "Refrigerators",
+        "image": "http://example.com/images/RR20C20C2RH/IM.jpg",
+        "description": "192 L Single Door Refrigerator with a reliable cooling system, keeping your food fresh for longer in a compact form.",
+        "brand": "Samsung",
+        "capacity": "192 L"
     },
     {
-        id: "acf7f7d3-b8c5-43ac-88b4-540106b12b6f",
-        image: "image/musicht/LG-Soundbar.png",
-        name: "LG 3.1 Channel Soundbar with Wireless Subwoofer",
-        rating: {
-            stars: 4.3,
-            count: 120
-        },
-        mrp: 22000,
-        price: 19000,
-        keywords: [
-            "soundbar", "lg", "hometheater", "music",
-        ],
-        category: "MusicHomeTheater"
+        "name": "RR20C241258/IM",
+        "model": "RR20C241258/IM",
+        "mrp": 36990,
+        "price": 31500,
+        "keywords": ["Single Door", "192 L"],
+        "category": "Refrigerators",
+        "image": "http://example.com/images/RR20C241258/IM.jpg",
+        "description": "192 L Single Door Refrigerator with an efficient compressor and spacious storage, ideal for a small family or single-user.",
+        "brand": "Samsung",
+        "capacity": "192 L"
+    },
+    {
+        "name": "RR20C2722CR/IM",
+        "model": "RR20C2722CR/IM",
+        "mrp": 37990,
+        "price": 32500,
+        "keywords": ["Single Door", "192 L"],
+        "category": "Refrigerators",
+        "image": "http://example.com/images/RR20C2722CR/IM.jpg",
+        "description": "192 L Single Door Refrigerator with a modern design and energy-saving features, perfect for modern homes.",
+        "brand": "Samsung",
+        "capacity": "192 L"
+    },
+    {
+        "name": "RR20C2722CU/IM",
+        "model": "RR20C2722CU/IM",
+        "mrp": 37990,
+        "price": 32500,
+        "keywords": ["Single Door", "192 L"],
+        "category": "Refrigerators",
+        "image": "http://example.com/images/RR20C2722CU/IM.jpg",
+        "description": "192 L Single Door Refrigerator with advanced cooling technology and minimalistic design for a better kitchen aesthetic.",
+        "brand": "Samsung",
+        "capacity": "192 L"
+    },
+    {
+        "name": "RR20C2Z226R/IM",
+        "model": "RR20C2Z226R/IM",
+        "mrp": 39590,
+        "price": 33500,
+        "keywords": ["Single Door", "192 L"],
+        "category": "Refrigerators",
+        "image": "http://example.com/images/RR20C2Z226R/IM.jpg",
+        "description": "192 L Single Door Refrigerator featuring a spacious interior and a modern design to keep your food fresh and organized.",
+        "brand": "Samsung",
+        "capacity": "192 L"
+    },
+    {
+        "name": "RR20C2Z226U/IM",
+        "model": "RR20C2Z226U/IM",
+        "mrp": 39590,
+        "price": 33500,
+        "keywords": ["Single Door", "192 L"],
+        "category": "Refrigerators",
+        "image": "http://example.com/images/RR20C2Z226U/IM.jpg",
+        "description": "192 L Single Door Refrigerator with an efficient compressor and durable build, providing value for money.",
+        "brand": "Samsung",
+        "capacity": "192 L"
+    },
+    {
+        "name": "RR20M282ZS8/IM",
+        "model": "RR20M282ZS8/IM",
+        "mrp": 38990,
+        "price": 33000,
+        "keywords": ["Single Door", "192 L"],
+        "category": "Refrigerators",
+        "image": "http://example.com/images/RR20M282ZS8/IM.jpg",
+        "description": "192 L Single Door Refrigerator with a sleek finish and spacious storage, ideal for everyday household needs.",
+        "brand": "Samsung",
+        "capacity": "192 L"
+    },
+    {
+        "name": "RR20T282ZR8/IM",
+        "model": "RR20T282ZR8/IM",
+        "mrp": 41990,
+        "price": 36000,
+        "keywords": ["Single Door", "192 L"],
+        "category": "Refrigerators",
+        "image": "http://example.com/images/RR20T282ZR8/IM.jpg",
+        "description": "192 L Single Door Refrigerator with a contemporary design and efficient cooling to preserve your food for longer.",
+        "brand": "Samsung",
+        "capacity": "192 L"
+    },
+    {
+        "name": "RR20T282ZU8/IM",
+        "model": "RR20T282ZU8/IM",
+        "mrp": 41990,
+        "price": 36000,
+        "keywords": ["Single Door", "192 L"],
+        "category": "Refrigerators",
+        "image": "http://example.com/images/RR20T282ZU8/IM.jpg",
+        "description": "192 L Single Door Refrigerator with innovative features for better storage and energy-efficient performance.",
+        "brand": "Samsung",
+        "capacity": "192 L"
+    },
+    {
+        "name": "RR24A272ZCU/IM",
+        "model": "RR24A272ZCU/IM",
+        "mrp": 44990,
+        "price": 38200,
+        "keywords": ["Single Door", "230 L"],
+        "category": "Refrigerators",
+        "image": "http://example.com/images/RR24A272ZCU/IM.jpg",
+        "description": "230 L Single Door Refrigerator designed to deliver superior cooling while offering more space for your food.",
+        "brand": "Samsung",
+        "capacity": "230 L"
+    },
+    {
+        "name": "RT28A3022GS/IM",
+        "model": "RT28A3022GS/IM",
+        "mrp": 56490,
+        "price": 46500,
+        "keywords": ["Double Door", "253 L"],
+        "category": "Refrigerators",
+        "image": "http://example.com/images/RT28A3022GS/IM.jpg",
+        "description": "253 L Double Door Refrigerator with a sleek design, fast cooling, and better space management for large families.",
+        "brand": "Samsung",
+        "capacity": "253 L"
+    },
+    {
+        "name": "RT28A32216U/IM",
+        "model": "RT28A32216U/IM",
+        "mrp": 60990,
+        "price": 51000,
+        "keywords": ["Double Door", "253 L"],
+        "category": "Refrigerators",
+        "image": "http://example.com/images/RT28A32216U/IM.jpg",
+        "description": "253 L Double Door Refrigerator with advanced features like energy-saving technology and better food preservation.",
+        "brand": "Samsung",
+        "capacity": "253 L"
+    },
+    {
+        "name": "RT28A32216R/IM",
+        "model": "RT28A32216R/IM",
+        "mrp": 60990,
+        "price": 51000,
+        "keywords": ["Double Door", "253 L"],
+        "category": "Refrigerators",
+        "image": "http://example.com/images/RT28A32216R/IM.jpg",
+        "description": "253 L Double Door Refrigerator with enhanced cooling performance and energy-efficient technology.",
+        "brand": "Samsung",
+        "capacity": "253 L"
+    },
+    {
+        "name": "RT28C3221CR/IM",
+        "model": "RT28C3221CR/IM",
+        "mrp": 61990,
+        "price": 51500,
+        "keywords": ["Double Door", "253 L"],
+        "category": "Refrigerators",
+        "image": "http://example.com/images/RT28C3221CR/IM.jpg",
+        "description": "253 L Double Door Refrigerator featuring a modern look and improved cooling system for long-lasting freshness.",
+        "brand": "Samsung",
+        "capacity": "253 L"
+    },
+    {
+        "name": "RT28C3221CU/IM",
+        "model": "RT28C3221CU/IM",
+        "mrp": 61990,
+        "price": 51500,
+        "keywords": ["Double Door", "253 L"],
+        "category": "Refrigerators",
+        "image": "http://example.com/images/RT28C3221CU/IM.jpg",
+        "description": "253 L Double Door Refrigerator with enhanced storage options and effective cooling technology.",
+        "brand": "Samsung",
+        "capacity": "253 L"
+    },
+    {
+        "name": "RT30K334258/IM",
+        "model": "RT30K334258/IM",
+        "mrp": 67990,
+        "price": 55500,
+        "keywords": ["Double Door", "275 L"],
+        "category": "Refrigerators",
+        "image": "http://example.com/images/RT30K334258/IM.jpg",
+        "description": "275 L Double Door Refrigerator with improved storage, energy efficiency, and a stylish look for modern kitchens.",
+        "brand": "Samsung",
+        "capacity": "275 L"
+    },
+    {
+        "name": "RT37C4521S8/IM",
+        "model": "RT37C4521S8/IM",
+        "mrp": 84990,
+        "price": 71000,
+        "keywords": ["5 in 1", "345 L"],
+        "category": "Refrigerators",
+        "image": "http://example.com/images/RT37C4521S8/IM.jpg",
+        "description": "345 L 5-in-1 Refrigerator with a convertible design offering versatile storage options and efficient cooling.",
+        "brand": "Samsung",
+        "capacity": "345 L"
+    },
+    {
+        "name": "RT39C5531S8/IM",
+        "model": "RT39C5531S8/IM",
+        "mrp": 108990,
+        "price": 98091,
+        "keywords": ["5 in 1", "394 L"],
+        "category": "Refrigerators",
+        "image": "http://example.com/images/RT39C5531S8/IM.jpg",
+        "description": "394 L 5-in-1 Refrigerator with convertible features, designed for spacious storage and energy-efficient cooling.",
+        "brand": "Samsung",
+        "capacity": "394 L"
+    },
+    {
+        "name": "RT42C553258/IM",
+        "model": "RT42C553258/IM",
+        "mrp": 116490,
+        "price": 104841,
+        "keywords": ["5 in 1", "415 L"],
+        "category": "Refrigerators",
+        "image": "http://example.com/images/RT42C553258/IM.jpg",
+        "description": "415 L 5-in-1 Refrigerator with multiple cooling modes and a spacious interior to store all your food items.",
+        "brand": "Samsung",
+        "capacity": "415 L"
+    },
+    {
+        "name": "RT47K6358SL/TL",
+        "model": "RT47K6358SL/TL",
+        "mrp": 164990,
+        "price": 120500,
+        "keywords": ["5 in 1", "465 L"],
+        "category": "Refrigerators",
+        "image": "http://example.com/images/RT47K6358SL/TL.jpg",
+        "description": "465 L 5-in-1 Refrigerator with sleek design, perfect for large families, providing optimized cooling and energy savings.",
+        "brand": "Samsung",
+        "capacity": "465 L"
+    },
+    {
+        "name": "RT49K6338BS/TL",
+        "model": "RT49K6338BS/TL",
+        "mrp": 169990,
+        "price": 127192,
+        "keywords": ["5 in 1", "478 L"],
+        "category": "Refrigerators",
+        "image": "http://example.com/images/RT49K6338BS/TL.jpg",
+        "description": "478 L 5-in-1 Refrigerator designed to meet large storage needs with enhanced cooling options and multiple modes.",
+        "brand": "Samsung",
+        "capacity": "478 L"
+    },
+    {
+        "name": "RT54K6558SL/TL",
+        "model": "RT54K6558SL/TL",
+        "mrp": 189990,
+        "price": 151992,
+        "keywords": ["5 in 1", "523 L"],
+        "category": "Refrigerators",
+        "image": "http://example.com/images/RT54K6558SL/TL.jpg",
+        "description": "523 L 5-in-1 Refrigerator with ultra-spacious design, ideal for large households, offering superior cooling performance.",
+        "brand": "Samsung",
+        "capacity": "523 L"
+    },
+    {
+        "name": "RT56K6378SL/TL",
+        "model": "RT56K6378SL/TL",
+        "mrp": 194990,
+        "price": 151992,
+        "keywords": ["5 in 1", "551 L"],
+        "category": "Refrigerators",
+        "image": "http://example.com/images/RT56K6378SL/TL.jpg",
+        "description": "551 L 5-in-1 Refrigerator with the largest capacity, multiple cooling options for flexible storage and efficiency.",
+        "brand": "Samsung",
+        "capacity": "551 L"
+    },
+    {
+        "name": "WT70M3200HB/TL",
+        "model": "WT70M3200HB/TL",
+        "mrp": 25990,
+        "price": 23000,
+        "keywords": ["Semi-Automatic Top Load", "7 Kg"],
+        "category": "WashingMachines",
+        "image": "http://example.com/images/WT70M3200HB/TL.jpg",
+        "description": "7 Kg Semi-Automatic Top Load Washing Machine, compact design and efficient wash cycles for everyday laundry.",
+        "brand": "Samsung",
+        "capacity": "7 Kg"
+    },
+    {
+        "name": "WT70M3200LL/TL",
+        "model": "WT70M3200LL/TL",
+        "mrp": 25990,
+        "price": 23000,
+        "keywords": ["Semi-Automatic Top Load", "7 Kg"],
+        "category": "WashingMachines",
+        "image": "http://example.com/images/WT70M3200LL/TL.jpg",
+        "description": "7 Kg Semi-Automatic Top Load Washing Machine with advanced features for efficient and quick washing.",
+        "brand": "Samsung",
+        "capacity": "7 Kg"
+    },
+    {
+        "name": "WT70M3000HP/TL",
+        "model": "WT70M3000HP/TL",
+        "mrp": 25990,
+        "price": 23000,
+        "keywords": ["Semi-Automatic Top Load", "7 Kg"],
+        "category": "WashingMachines",
+        "image": "http://example.com/images/WT70M3000HP/TL.jpg",
+        "description": "7 Kg Semi-Automatic Top Load Washing Machine with powerful washing technology for a superior laundry experience.",
+        "brand": "Samsung",
+        "capacity": "7 Kg"
+    },
+    {
+        "name": "WA80BG4441BD/IM",
+        "model": "WA80BG4441BD/IM",
+        "mrp": 49990,
+        "price": 42778,
+        "keywords": ["Fully Automatic Top Load", "8 Kg"],
+        "category": "WashingMachines",
+        "image": "http://example.com/images/WA80BG4441BD/IM.jpg",
+        "description": "8 Kg Fully Automatic Top Load Washing Machine with advanced washing modes for optimal cleaning results.",
+        "brand": "Samsung",
+        "capacity": "8 Kg"
+    },
+    {
+        "name": "WA80BG4545BV/IM",
+        "model": "WA80BG4545BV/IM",
+        "mrp": 56990,
+        "price": 49444,
+        "keywords": ["Fully Automatic Top Load", "8 Kg"],
+        "category": "WashingMachines",
+        "image": "http://example.com/images/WA80BG4545BV/IM.jpg",
+        "description": "8 Kg Fully Automatic Top Load Washing Machine with multi-wash programs and an energy-efficient motor.",
+        "brand": "Samsung",
+        "capacity": "8 Kg"
+    },
+    {
+        "name": "WW80TA046AX/IM",
+        "model": "WW80TA046AX/IM",
+        "mrp": 101990,
+        "price": 76000,
+        "keywords": ["EcobubbleTM Front Load", "8 Kg"],
+        "category": "WashingMachines",
+        "image": "http://example.com/images/WW80TA046AX/IM.jpg",
+        "description": "8 Kg EcobubbleTM Front Load Washing Machine with advanced bubble technology for gentle yet effective cleaning.",
+        "brand": "Samsung",
+        "capacity": "8 Kg"
+    },
+    {
+        "name": "WW80TA046AE/IM",
+        "model": "WW80TA046AE/IM",
+        "mrp": 89990,
+        "price": 73000,
+        "keywords": ["EcobubbleTM Front Load", "8 Kg"],
+        "category": "WashingMachines",
+        "image": "http://example.com/images/WW80TA046AE/IM.jpg",
+        "description": "8 Kg EcobubbleTM Front Load Washing Machine with energy-saving and water-efficient features for modern homes.",
+        "brand": "Samsung",
+        "capacity": "8 Kg"
+    },
+    {
+        "name": "WW80T504DAN/IM",
+        "model": "WW80T504DAN/IM",
+        "mrp": 117990,
+        "price": 81000,
+        "keywords": ["EcobubbleTM Front Load", "8 Kg"],
+        "category": "WashingMachines",
+        "image": "http://example.com/images/WW80T504DAN/IM.jpg",
+        "description": "8 Kg EcobubbleTM Front Load Washing Machine with Smart Control and advanced wash cycles for better care of your clothes.",
+        "brand": "Samsung",
+        "capacity": "8 Kg"
+    },
+    {
+        "name": "WW80T504DAB/IM",
+        "model": "WW80T504DAB/IM",
+        "mrp": 117990,
+        "price": 83000,
+        "keywords": ["AI EcobubbleTM Front Load", "8 Kg"],
+        "category": "WashingMachines",
+        "image": "http://example.com/images/WW80T504DAB/IM.jpg",
+        "description": "8 Kg AI EcobubbleTM Front Load Washing Machine with advanced AI-powered cleaning for efficient fabric care.",
+        "brand": "Samsung",
+        "capacity": "8 Kg"
+    },
+    {
+        "name": "WW90T504DAN/IM",
+        "model": "WW90T504DAN/IM",
+        "mrp": 125990,
+        "price": 95000,
+        "keywords": ["AI EcobubbleTM Front Load", "9 Kg"],
+        "category": "WashingMachines",
+        "image": "http://example.com/images/WW90T504DAN/IM.jpg",
+        "description": "9 Kg AI EcobubbleTM Front Load Washing Machine with large capacity and intelligent fabric care.",
+        "brand": "Samsung",
+        "capacity": "9 Kg"
+    },
+    {
+        "name": "WW12TP94DSX/SP",
+        "model": "WW12TP94DSX/SP",
+        "mrp": 153990,
+        "price": 127000,
+        "keywords": ["AI EcobubbleTM Front Load", "12 Kg"],
+        "category": "WashingMachines",
+        "image": "http://example.com/images/WW12TP94DSX/SP.jpg",
+        "description": "12 Kg AI EcobubbleTM Front Load Washing Machine with ultra-large capacity for families, ensuring gentle yet effective washing.",
+        "brand": "Samsung",
+        "capacity": "12 Kg"
+    },
+    {
+        "name": "WD90T634DBN/SP",
+        "model": "WD90T634DBN/SP",
+        "mrp": 132990,
+        "price": 102000,
+        "keywords": ["AI EcobubbleTM Washer Dryer", "9 Kg"],
+        "category": "WashingMachines",
+        "image": "http://example.com/images/WD90T634DBN/SP.jpg",
+        "description": "9 Kg AI EcobubbleTM Washer Dryer with both washing and drying capabilities, perfect for small to medium households.",
+        "brand": "Samaung",
+        "capacity": "9 Kg"
+    },
+    {
+        "name": "WD11TP34DSX/FQ",
+        "model": "WD11TP34DSX/FQ",
+        "mrp": 151990,
+        "price": 122000,
+        "keywords": ["AI EcobubbleTM Washer Dryer", "11 Kg"],
+        "category": "WashingMachines",
+        "image": "http://example.com/images/WD11TP34DSX/FQ.jpg",
+        "description": "11 Kg AI EcobubbleTM Washer Dryer with advanced washing and drying options, featuring EcoBubble technology for energy efficiency.",
+        "brand": "Samsung",
+        "capacity": "11 Kg"
     },
 ];
 
