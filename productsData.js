@@ -9,7 +9,7 @@ const products = [
         "price": 66700,
         "keywords": [],
         "category": "LEDTelevisions",
-        brand: "Samsung"
+        "brand": "Samsung"
     },
     {
 
@@ -20,7 +20,7 @@ const products = [
         "price": 29990,
         "keywords": ["Array", "5"],
         "category": "LEDTelevisions",
-        brand: "samsung"
+        "brand": "samsung"
     },
     {
 

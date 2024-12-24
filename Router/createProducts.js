@@ -13,7 +13,9 @@ router.post('/products', async (req, res) => {
             modalNumber,
             description,
             image,
-            keywords
+            keywords,
+            brand,
+            capacity,
         } = req.body;
 
         // Create a new product using the incoming data
@@ -25,7 +27,9 @@ router.post('/products', async (req, res) => {
             modalNumber,
             description,
             image,
-            keywords
+            keywords,
+            brand,
+            capacity,
         });
 
         // Save the new product to the database
