@@ -3534,16 +3534,18 @@ const products = [
         "image": "https://link-to-image.com"
     },
     {
-        "category": "KitchenAppliances",
+
+        "image": "https://link-to-image.com",
         "name": "Electric Water Heater ES-15V-SD WiFi 25L",
+        "description": "25L electric water heater with shockproof UMC inner tank, 8 bar rated pressure, RSC technology, energy-saving features, Incoloy 800 SS heating element, Intelligent Bacteria Proof System (iBPS), and voltage fluctuation protection.",
         "model": "ES-15V-SD WiFi",
         "capacity": "25L",
         "price": "29,000",
         "mrp": "34,000",
-        "description": "25L electric water heater with shockproof UMC inner tank, 8 bar rated pressure, RSC technology, energy-saving features, Incoloy 800 SS heating element, Intelligent Bacteria Proof System (iBPS), and voltage fluctuation protection.",
+
         "keywords": ["Electric Water Heater", "25L", "WiFi", "Shock Proof", "Energy Saving", "Incoloy SS", "Bacteria Proof", "Voltage Protection"],
         "brand": "Haier",
-        "image": "https://link-to-image.com"
+        "category": "KitchenAppliances",
     }
 
 
