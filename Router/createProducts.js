@@ -48,19 +48,31 @@ router.get('/products', async (req, res) => {
         const { category } = req.query;  // Get the category from query parameters
         let products;
 
-        if (category) {
-            // If category is provided, filter products by category
-            products = await Product.find({ category: category });
-        } else {
-            // Otherwise, get all products
-            products = await Product.find();
-        }
+        // If a category is provided, filter by category; otherwise, include all categories
+        const matchCriteria = category ? { category: category } : {};
 
-        res.status(200).json(products);  // Send products to client
+        // Aggregate to group by 'model' and get unique products based on their model
+        products = await Product.aggregate([
+            {
+                $match: matchCriteria  // Match by category if specified
+            },
+            {
+                $group: {
+                    _id: "$model",  // Group by model to ensure uniqueness
+                    productDetails: { $first: "$$ROOT" }  // Keep the first product document per model
+                }
+            },
+            {
+                $replaceRoot: { newRoot: "$productDetails" }  // Flatten the document structure
+            }
+        ]);
+
+        res.status(200).json(products);  // Send unique products based on model to the client
     } catch (err) {
         res.status(500).json({ message: err.message });
     }
 });
+
 
 // Get a product by ID
 router.get('/productsDetails/:id', async (req, res) => {
