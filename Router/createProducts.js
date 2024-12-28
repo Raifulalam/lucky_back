@@ -74,7 +74,7 @@ router.get('/products', async (req, res) => {
 });
 
 //get products by brand
-router.get('/products/brand/:brand', async (req, res) => {
+router.get('/products/:brand', async (req, res) => {
     try {
         const { brand } = req.params;  // Get the brand from URL parameters
         const products = await Product.find({ brand: brand });  // Find products by brand
