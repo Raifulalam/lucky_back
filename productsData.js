@@ -8,7 +8,7 @@ const products = [
         "capacity": "500 Watt",
         "brand": "Bajaj",
         "description": "500 Watt Mixer Grinder in French Blue with 3 jars.",
-        "category": "Mixer Grinder",
+        "caterory": "HomeAppliances",
         "keywords": ["mixer grinder", "Bajaj", "500 watt", "French blue", "3 jar", "home appliances", "kitchen appliance"],
         "model": "410600"
     },
@@ -20,7 +20,7 @@ const products = [
         "capacity": "500 Watt",
         "brand": "Bajaj",
         "description": "500 Watt Mixer Grinder in Purple and White with 3 jars.",
-        "category": "Mixer Grinder",
+        "caterory": "HomeAppliances",
         "keywords": ["mixer grinder", "Bajaj", "500 watt", "purple", "3 jar", "home appliances", "kitchen appliance"],
         "model": "410568"
     },
@@ -32,7 +32,7 @@ const products = [
         "capacity": "500 Watt",
         "brand": "Bajaj",
         "description": "500 Watt Mixer Grinder in Lilac and White with 3 jars.",
-        "category": "Mixer Grinder",
+        "caterory": "HomeAppliances",
         "keywords": ["mixer grinder", "Bajaj", "500 watt", "lilac", "3 jar", "home appliances", "kitchen appliance"],
         "model": "410582"
     },
@@ -44,7 +44,7 @@ const products = [
         "capacity": "750 Watt",
         "brand": "Bajaj",
         "description": "750 Watt Mixer Grinder in Purple and White with 3 jars.",
-        "category": "Mixer Grinder",
+        "caterory": "HomeAppliances",
         "keywords": ["mixer grinder", "Bajaj", "750 watt", "purple", "3 jar", "home appliances", "kitchen appliance"],
         "model": "410578"
     },
@@ -56,7 +56,7 @@ const products = [
         "capacity": "750 Watt",
         "brand": "Bajaj",
         "description": "750 Watt Mixer Grinder in Black with 3 jars.",
-        "category": "Mixer Grinder",
+        "caterory": "HomeAppliances",
         "keywords": ["mixer grinder", "Bajaj", "750 watt", "black", "3 jar", "home appliances", "kitchen appliance"],
         "model": "410592"
     },
@@ -68,7 +68,7 @@ const products = [
         "capacity": "750 Watt",
         "brand": "Bajaj",
         "description": "750 Watt Mixer Grinder in Black and White with 3 jars.",
-        "category": "Mixer Grinder",
+        "caterory": "HomeAppliances",
         "keywords": ["mixer grinder", "Bajaj", "750 watt", "black", "3 jar", "home appliances", "kitchen appliance"],
         "model": "410594"
     },
@@ -80,7 +80,7 @@ const products = [
         "capacity": "1 Litre",
         "brand": "Bajaj",
         "description": "1 Litre Instant Electric Geyser with 3KW power.",
-        "category": "Electric Geyser",
+        "caterory": "HomeAppliances",
         "keywords": ["electric geyser", "Bajaj", "1 litre", "3KW", "instant", "water heating"],
         "model": "150700"
     },
@@ -92,7 +92,7 @@ const products = [
         "capacity": "3 Litre",
         "brand": "Bajaj",
         "description": "3 Litre Instant Electric Geyser with 3KW power.",
-        "category": "Electric Geyser",
+        "caterory": "HomeAppliances",
         "keywords": ["electric geyser", "Bajaj", "3 litre", "3KW", "instant", "water heating"],
         "model": "150704"
     },
@@ -104,7 +104,7 @@ const products = [
         "capacity": "15 Litre",
         "brand": "Bajaj",
         "description": "15 Litre Storage Electric Geyser.",
-        "category": "Electric Geyser",
+        "caterory": "HomeAppliances",
         "keywords": ["electric geyser", "Bajaj", "15 litre", "storage", "water heating"],
         "model": "150967"
     },
@@ -116,7 +116,7 @@ const products = [
         "capacity": "15 Litre",
         "brand": "Bajaj",
         "description": "15 Litre Storage Electric Geyser.",
-        "category": "Electric Geyser",
+        "caterory": "HomeAppliances",
         "keywords": ["electric geyser", "Bajaj", "15 litre", "storage", "water heating"],
         "model": "150968"
     },
@@ -128,7 +128,7 @@ const products = [
         "capacity": "25 Litre",
         "brand": "Bajaj",
         "description": "25 Litre Storage Electric Geyser.",
-        "category": "Electric Geyser",
+        "caterory": "HomeAppliances",
         "keywords": ["electric geyser", "Bajaj", "25 litre", "storage", "water heating"],
         "model": "150969"
     },
@@ -140,7 +140,7 @@ const products = [
         "capacity": "10 Litre",
         "brand": "Bajaj",
         "description": "10 Litre Storage Electric Geyser.",
-        "category": "Electric Geyser",
+        "caterory": "HomeAppliances",
         "keywords": ["electric geyser", "Bajaj", "10 litre", "storage", "water heating"],
         "model": "150770"
     },
@@ -152,7 +152,7 @@ const products = [
         "capacity": "15 Litre",
         "brand": "Bajaj",
         "description": "15 Litre Storage Electric Geyser.",
-        "category": "Electric Geyser",
+        "caterory": "HomeAppliances",
         "keywords": ["electric geyser", "Bajaj", "15 litre", "storage", "water heating"],
         "model": "150771"
     },
@@ -164,7 +164,7 @@ const products = [
         "capacity": "25 Litre",
         "brand": "Bajaj",
         "description": "25 Litre Storage Electric Geyser.",
-        "category": "Electric Geyser",
+        "caterory": "HomeAppliances",
         "keywords": ["electric geyser", "Bajaj", "25 litre", "storage", "water heating"],
         "model": "150772"
     },
@@ -176,7 +176,7 @@ const products = [
         "capacity": "25 Litre",
         "brand": "Bajaj",
         "description": "25 Litre Storage Electric Geyser.",
-        "category": "Electric Geyser",
+        "caterory": "HomeAppliances",
         "keywords": ["electric geyser", "Bajaj", "25 litre", "storage", "water heating"],
         "model": "150831"
     },
@@ -188,7 +188,7 @@ const products = [
         "capacity": "15 Litre",
         "brand": "Bajaj",
         "description": "15 Litre Storage Electric Geyser.",
-        "category": "Electric Geyser",
+        "caterory": "HomeAppliances",
         "keywords": ["electric geyser", "Bajaj", "15 litre", "storage", "water heating"],
         "model": "150894"
     },
@@ -200,7 +200,7 @@ const products = [
         "capacity": "25 Litre",
         "brand": "Bajaj",
         "description": "25 Litre Storage Electric Geyser.",
-        "category": "Electric Geyser",
+        "caterory": "HomeAppliances",
         "keywords": ["electric geyser", "Bajaj", "25 litre", "storage", "water heating"],
         "model": "150895"
     },
@@ -212,7 +212,7 @@ const products = [
         "capacity": "10 Litre",
         "brand": "Bajaj",
         "description": "10 Litre Storage Electric Geyser.",
-        "category": "Electric Geyser",
+        "caterory": "HomeAppliances",
         "keywords": ["electric geyser", "Bajaj", "10 litre", "storage", "water heating"],
         "model": "150856"
     },
@@ -224,7 +224,7 @@ const products = [
         "capacity": "25 Litre",
         "brand": "Bajaj",
         "description": "25 Litre Storage Electric Geyser.",
-        "category": "Electric Geyser",
+        "caterory": "HomeAppliances",
         "keywords": ["electric geyser", "Bajaj", "25 litre", "storage", "water heating"],
         "model": "150858"
     },
@@ -236,7 +236,7 @@ const products = [
         "capacity": "10 Litre",
         "brand": "Bajaj",
         "description": "10 Litre Storage Electric Geyser.",
-        "category": "Electric Geyser",
+        "caterory": "HomeAppliances",
         "keywords": ["electric geyser", "Bajaj", "10 litre", "storage", "water heating"],
         "model": "150897"
     },
@@ -248,7 +248,7 @@ const products = [
         "capacity": "15 Litre",
         "brand": "Bajaj",
         "description": "15 Litre Storage Electric Geyser.",
-        "category": "Electric Geyser",
+        "caterory": "HomeAppliances",
         "keywords": ["electric geyser", "Bajaj", "15 litre", "storage", "water heating"],
         "model": "150898"
     },
@@ -260,7 +260,7 @@ const products = [
         "capacity": "25 Litre",
         "brand": "Bajaj",
         "description": "25 Litre Storage Electric Geyser.",
-        "category": "Electric Geyser",
+        "caterory": "HomeAppliances",
         "keywords": ["electric geyser", "Bajaj", "25 litre", "storage", "water heating"],
         "model": "150899"
     },
@@ -272,7 +272,7 @@ const products = [
         "capacity": "15 Litre",
         "brand": "Bajaj",
         "description": "15 Litre Storage Electric Geyser in Blue.",
-        "category": "Electric Geyser",
+        "caterory": "HomeAppliances",
         "keywords": ["electric geyser", "Bajaj", "15 litre", "blue", "storage", "water heating"],
         "model": "150924"
     },
@@ -284,7 +284,7 @@ const products = [
         "capacity": "25 Litre",
         "brand": "Bajaj",
         "description": "25 Litre Storage Electric Geyser in Blue.",
-        "category": "Electric Geyser",
+        "caterory": "HomeAppliances",
         "keywords": ["electric geyser", "Bajaj", "25 litre", "blue", "storage", "water heating"],
         "model": "150925"
     },
@@ -296,7 +296,7 @@ const products = [
         "capacity": "750 Watt",
         "brand": "Bajaj",
         "description": "750 Watt Dry Iron in White.",
-        "category": "Iron",
+        "category": "HomeAppliances",
         "keywords": ["dry iron", "Bajaj", "750 watt", "white", "home appliances"],
         "model": "440301"
     },
@@ -308,7 +308,7 @@ const products = [
         "capacity": "1000 Watt",
         "brand": "Bajaj",
         "description": "1000 Watt Dry Iron in White and Blue.",
-        "category": "Iron",
+        "category": "HomeAppliances",
         "keywords": ["dry iron", "Bajaj", "1000 watt", "white", "blue", "home appliances"],
         "model": "440325"
     },
@@ -320,7 +320,7 @@ const products = [
         "capacity": "1000 Watt",
         "brand": "Bajaj",
         "description": "1000 Watt Dry Iron in White and Lavender.",
-        "category": "Iron",
+        "category": "HomeAppliances",
         "keywords": ["dry iron", "Bajaj", "1000 watt", "white", "lavender", "home appliances"],
         "model": "440304"
     },
@@ -332,7 +332,7 @@ const products = [
         "capacity": "1100 Watt",
         "brand": "Bajaj",
         "description": "1100 Watt Dry Iron in Red and Black.",
-        "category": "Iron",
+        "category": "HomeAppliances",
         "keywords": ["dry iron", "Bajaj", "1100 watt", "red", "black", "home appliances"],
         "model": "440314"
     },
@@ -344,7 +344,7 @@ const products = [
         "capacity": "1250 Watt",
         "brand": "Bajaj",
         "description": "1250 Watt Steam Iron in Purple and White.",
-        "category": "Iron",
+        "category": "HomeAppliances",
         "keywords": ["steam iron", "Bajaj", "1250 watt", "purple", "white", "home appliances"],
         "model": "440509"
     },
@@ -356,7 +356,7 @@ const products = [
         "capacity": "2 Rod",
         "brand": "Bajaj",
         "description": "2 Rod Halogen Heater in White.",
-        "category": "Halogen Heater",
+        "category": "HomeAppliances",
         "keywords": ["room heater", "Bajaj", "2 rod", "halogen", "white"],
         "model": "260028"
     },
@@ -368,7 +368,7 @@ const products = [
         "capacity": "3 Rod",
         "brand": "Bajaj",
         "description": "3 Rod Halogen Heater in Grey.",
-        "category": "Halogen Heater",
+        "category": "HomeAppliances",
         "keywords": ["room heater", "Bajaj", "3 rod", "halogen", "grey"],
         "model": "260089"
     },
@@ -380,7 +380,7 @@ const products = [
         "capacity": "2000 Watt",
         "brand": "Bajaj",
         "description": "2000 Watt Heat Convector Room Heater.",
-        "category": "Halogen Heater",
+        "category": "HomeAppliances",
         "keywords": ["room heater", "Bajaj", "2000 watt", "heat convector"],
         "model": "260007"
     },
@@ -392,7 +392,7 @@ const products = [
         "capacity": "1.5 KW",
         "brand": "Bajaj",
         "description": "1.5 KW Immersion Heater Rod.",
-        "category": "Immersion Heater",
+        "category": "HomeAppliances",
         "keywords": ["immersion heater", "Bajaj", "1.5 KW"],
         "model": "150650"
     },
@@ -404,213 +404,9 @@ const products = [
         "capacity": "1.5 KW",
         "brand": "Bajaj",
         "description": "1.5 KW Waterproof Immersion Heater Rod.",
-        "category": "Immersion Heater",
+        "category": "HomeAppliances",
         "keywords": ["immersion heater", "Bajaj", "waterproof", "1.5 KW"],
         "model": "150833"
-    },
-    {
-        "name": "Bajaj RCX 1.8 Dlx Cooker",
-        "price": 5536,
-        "mrp": 6536,
-        "image": "image_url_here",
-        "capacity": "1.8 Litre",
-        "brand": "Bajaj",
-        "description": "1.8 Litre Drum Rice Cooker.",
-        "category": "KitchenAppliances",
-        "keywords": ["rice cooker", "Bajaj", "1.8 litre", "drum", "cooking"],
-        "model": "680101"
-    },
-    {
-        "name": "Bajaj RCX 1.8 Dlx Duo(Steamer)",
-        "price": 6920,
-        "mrp": 7920,
-        "image": "image_url_here",
-        "capacity": "1.8 Litre",
-        "brand": "Bajaj",
-        "description": "1.8 Litre Drum Rice Cooker with Steamer.",
-        "category": "KitchenAppliances",
-        "keywords": ["rice cooker", "Bajaj", "1.8 litre", "steamer", "drum"],
-        "model": "680103"
-    },
-    {
-        "name": "Bajaj IRX 220F Infrared Cooktop",
-        "price": 5647,
-        "mrp": 6647,
-        "image": "image_url_here",
-        "capacity": "2200 Watt",
-        "brand": "Bajaj",
-        "description": "2200 Watt Single Infra Cooktop with Grill Grate.",
-        "category": "KitchenAppliances",
-        "keywords": ["infrared cooktop", "Bajaj", "2200 watt", "single", "grill grate"],
-        "model": "740311"
-    },
-    {
-        "name": "Bajaj ICX 190TS Induction Cooktop",
-        "price": 6920,
-        "mrp": 7920,
-        "image": "image_url_here",
-        "capacity": "1900 Watt",
-        "brand": "Bajaj",
-        "description": "1900 Watt Induction Cooktop.",
-        "category": "KitchenAppliances",
-        "keywords": ["induction cooktop", "Bajaj", "1900 watt", "cooking"],
-        "model": "740303"
-    },
-    {
-        "name": "Bajaj ICX 200FP Induction Cooktop",
-        "price": 7509,
-        "mrp": 8509,
-        "image": "image_url_here",
-        "capacity": "2000 Watt",
-        "brand": "Bajaj",
-        "description": "2000 Watt Induction Cooktop.",
-        "category": "KitchenAppliances",
-        "keywords": ["induction cooktop", "Bajaj", "2000 watt", "cooking"],
-        "model": "740304"
-    },
-    {
-        "name": "Bajaj HB 20 Hand Blender",
-        "price": 2664,
-        "mrp": 3120,
-        "image": "image_url_here",
-        "capacity": "300 Watt",
-        "brand": "Bajaj",
-        "description": "300 Watt Hand Blender in Green Color.",
-        "category": "KitchenAppliances",
-        "keywords": ["hand blender", "Bajaj", "300 watt", "green", "blending"],
-        "model": "410534"
-    },
-    {
-        "name": "Bajaj HB 21 Hand Blender",
-        "price": 3045,
-        "mrp": 3580,
-        "image": "image_url_here",
-        "capacity": "300 Watt",
-        "brand": "Bajaj",
-        "description": "300 Watt Hand Blender in Black and Peach.",
-        "category": "KitchenAppliances",
-        "keywords": ["hand blender", "Bajaj", "300 watt", "black", "peach"],
-        "model": "410535"
-    },
-    {
-        "name": "Bajaj KTX 1.8 L DLX Kettle",
-        "price": 2145,
-        "mrp": 2520,
-        "image": "image_url_here",
-        "capacity": "1.8 Litre",
-        "brand": "Bajaj",
-        "description": "1.8 Litre SS Body Kettle.",
-        "category": "KitchenAppliances",
-        "keywords": ["kettle", "Bajaj", "1.8 litre", "SS body", "boiling"],
-        "model": "670107"
-    },
-    {
-        "name": "Bajaj KTP 1.8 L Kettle",
-        "price": 2837,
-        "mrp": 3330,
-        "image": "image_url_here",
-        "capacity": "1.8 Litre",
-        "brand": "Bajaj",
-        "description": "1.8 Litre Purple and Black Color Kettle.",
-        "category": "KitchenAppliances",
-        "keywords": ["kettle", "Bajaj", "1.8 litre", "purple", "black"],
-        "model": "670114"
-    },
-    {
-        "name": "Bajaj Majesty CGX 2 Eco 2B SS Gas Stove",
-        "price": 7612,
-        "mrp": 8920,
-        "image": "image_url_here",
-        "capacity": "2 Burner",
-        "brand": "Bajaj",
-        "description": "2 Burner SS Gas Burner in Black Color Manual.",
-        "category": "KitchenAppliances",
-        "keywords": ["gas stove", "Bajaj", "2 burner", "manual", "SS body"],
-        "model": "450135"
-    },
-    {
-        "name": "Bajaj CGX2 Eco with AI Gas Stove",
-        "price": 9827,
-        "mrp": 11550,
-        "image": "image_url_here",
-        "capacity": "2 Burner",
-        "brand": "Bajaj",
-        "description": "2 Burner Gas Burner in Black with AI.",
-        "category": "KitchenAppliances",
-        "keywords": ["gas stove", "Bajaj", "2 burner", "AI", "black"],
-        "model": "450512"
-    },
-    {
-        "name": "Bajaj CGX3 Eco with AI Gas Stove",
-        "price": 13149,
-        "mrp": 15400,
-        "image": "image_url_here",
-        "capacity": "3 Burner",
-        "brand": "Bajaj",
-        "description": "3 Burner Gas Burner in Black with AI.",
-        "category": "KitchenAppliances",
-        "keywords": ["gas stove", "Bajaj", "3 burner", "AI", "black"],
-        "model": "450513"
-    },
-    {
-        "name": "Bajaj CGX4 with AI Gas Stove",
-        "price": 14533,
-        "mrp": 17100,
-        "image": "image_url_here",
-        "capacity": "4 Burner",
-        "brand": "Bajaj",
-        "description": "4 Burner Gas Burner in Black with AI.",
-        "category": "KitchenAppliances",
-        "keywords": ["gas stove", "Bajaj", "4 burner", "AI", "black"],
-        "model": "450514"
-    },
-    {
-        "name": "Bajaj 2BR GP6-NBAI Gas Stove",
-        "price": 10104,
-        "mrp": 11800,
-        "image": "image_url_here",
-        "capacity": "2 Burner",
-        "brand": "Bajaj",
-        "description": "2 Burner Gas Burner in Black with AI.",
-        "category": "KitchenAppliances",
-        "keywords": ["gas stove", "Bajaj", "2 burner", "AI", "black"],
-        "model": "450519"
-    },
-    {
-        "name": "Bajaj 3BR GP6-NBAI Gas Stove",
-        "price": 13426,
-        "mrp": 15700,
-        "image": "image_url_here",
-        "capacity": "3 Burner",
-        "brand": "Bajaj",
-        "description": "3 Burner Gas Burner in Black with AI.",
-        "category": "KitchenAppliances",
-        "keywords": ["gas stove", "Bajaj", "3 burner", "AI", "black"],
-        "model": "450520"
-    },
-    {
-        "name": "Majesty RH 11F Plus OFR Heater",
-        "price": 26713,
-        "mrp": 31400,
-        "image": "image_url_here",
-        "capacity": "11 Fin",
-        "brand": "Bajaj",
-        "description": "OFR Heater with PTC Ceramic Fan Heater 11 Fin.",
-        "category": "KitchenAppliances",
-        "keywords": ["OFR heater", "Bajaj", "11 fin", "ceramic fan", "heating"],
-        "model": "260083"
-    },
-    {
-        "name": "Majesty RH 13F Plus OFR Heater",
-        "price": 29758,
-        "mrp": 35000,
-        "image": "image_url_here",
-        "capacity": "13 Fin",
-        "brand": "Bajaj",
-        "description": "OFR Heater with PTC Ceramic Fan Heater 13 Fin.",
-        "category": "KitchenAppliances",
-        "keywords": ["OFR heater", "Bajaj", "13 fin", "ceramic fan", "heating"],
-        "model": "260087"
     }
 ]
 
