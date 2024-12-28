@@ -73,6 +73,18 @@ router.get('/products', async (req, res) => {
     }
 });
 
+//get products by brand
+router.get('/products/brand/:brand', async (req, res) => {
+    try {
+        const { brand } = req.params;  // Get the brand from URL parameters
+        const products = await Product.find({ brand: brand });  // Find products by brand
+        res.status(200).json(products);  // Send products to the client
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+});
+
+
 
 // Get a product by ID
 router.get('/productsDetails/:id', async (req, res) => {
