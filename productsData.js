@@ -10,7 +10,7 @@ const products = [
         "description": "500 Watt Mixer Grinder in French Blue with 3 jars.",
         "caterory": "HomeAppliances",
         "keywords": ["mixer grinder", "Bajaj", "500 watt", "French blue", "3 jar", "home appliances", "kitchen appliance"],
-        "model": "410600"
+        "model": "410600 Bajaj Ninja Series Notch 500W French Blue"
     },
     {
         "name": "Bajaj Ninja Series Elegance Purple 500W 3 Jar Mixer Grinder",
@@ -22,7 +22,7 @@ const products = [
         "description": "500 Watt Mixer Grinder in Purple and White with 3 jars.",
         "caterory": "HomeAppliances",
         "keywords": ["mixer grinder", "Bajaj", "500 watt", "purple", "3 jar", "home appliances", "kitchen appliance"],
-        "model": "410568"
+        "model": "410568 Bajaj Ninja Series Elegance Purple 500W"
     },
     {
         "name": "Bajaj Military Series Duetto 500W Lilac 3 Jar Mixer Grinder",
@@ -34,7 +34,7 @@ const products = [
         "description": "500 Watt Mixer Grinder in Lilac and White with 3 jars.",
         "caterory": "HomeAppliances",
         "keywords": ["mixer grinder", "Bajaj", "500 watt", "lilac", "3 jar", "home appliances", "kitchen appliance"],
-        "model": "410582"
+        "model": "410582 Bajaj Military Series Duetto 500W Lilac"
     },
     {
         "name": "Bajaj Ninja Series Carve 750W Purple 3 Jar Mixer Grinder",
@@ -46,7 +46,7 @@ const products = [
         "description": "750 Watt Mixer Grinder in Purple and White with 3 jars.",
         "caterory": "HomeAppliances",
         "keywords": ["mixer grinder", "Bajaj", "750 watt", "purple", "3 jar", "home appliances", "kitchen appliance"],
-        "model": "410578"
+        "model": "410578 Bajaj Ninja Series Carve 750W Purple"
     },
     {
         "name": "Bajaj Military Series Finesse 750W Midnight Mixer Grinder",
@@ -58,7 +58,7 @@ const products = [
         "description": "750 Watt Mixer Grinder in Black with 3 jars.",
         "caterory": "HomeAppliances",
         "keywords": ["mixer grinder", "Bajaj", "750 watt", "black", "3 jar", "home appliances", "kitchen appliance"],
-        "model": "410592"
+        "model": "410592 Bajaj Military Series Finesse 750W Midni"
     },
     {
         "name": "Bajaj Ninja Series Virtue 750W Black 3 Jar Mixer Grinder",
@@ -70,7 +70,7 @@ const products = [
         "description": "750 Watt Mixer Grinder in Black and White with 3 jars.",
         "caterory": "HomeAppliances",
         "keywords": ["mixer grinder", "Bajaj", "750 watt", "black", "3 jar", "home appliances", "kitchen appliance"],
-        "model": "410594"
+        "model": "410594 Bajaj Ninja Series Virtue 750W Black"
     },
     {
         "name": "Bajaj Flora 1L 3KW Instant Electric Geyser",
@@ -82,7 +82,7 @@ const products = [
         "description": "1 Litre Instant Electric Geyser with 3KW power.",
         "caterory": "HomeAppliances",
         "keywords": ["electric geyser", "Bajaj", "1 litre", "3KW", "instant", "water heating"],
-        "model": "150700"
+        "model": "150700 Flora IL 3KW "
     },
     {
         "name": "Bajaj Flora 3L IWH 3KW Instant Electric Geyser",
@@ -94,7 +94,7 @@ const products = [
         "description": "3 Litre Instant Electric Geyser with 3KW power.",
         "caterory": "HomeAppliances",
         "keywords": ["electric geyser", "Bajaj", "3 litre", "3KW", "instant", "water heating"],
-        "model": "150704"
+        "model": "150704 Flora 3L IWH 3KW"
     },
     {
         "name": "Bajaj Astor 10L 15 Litre Storage Electric Geyser",
@@ -106,7 +106,7 @@ const products = [
         "description": "15 Litre Storage Electric Geyser.",
         "caterory": "HomeAppliances",
         "keywords": ["electric geyser", "Bajaj", "15 litre", "storage", "water heating"],
-        "model": "150967"
+        "model": "150967 Astor 10L"
     },
     {
         "name": "Bajaj Astor 15L 15 Litre Storage Electric Geyser",
@@ -118,7 +118,7 @@ const products = [
         "description": "15 Litre Storage Electric Geyser.",
         "caterory": "HomeAppliances",
         "keywords": ["electric geyser", "Bajaj", "15 litre", "storage", "water heating"],
-        "model": "150968"
+        "model": "150968 Astor 15L"
     },
     {
         "name": "Bajaj Astor 25L 25 Litre Storage Electric Geyser",
@@ -130,7 +130,7 @@ const products = [
         "description": "25 Litre Storage Electric Geyser.",
         "caterory": "HomeAppliances",
         "keywords": ["electric geyser", "Bajaj", "25 litre", "storage", "water heating"],
-        "model": "150969"
+        "model": "150969 Astor 25L"
     },
     {
         "name": "Bajaj Shakti PC Deluxe 10L 10 Litre Storage Electric Geyser",
@@ -142,7 +142,7 @@ const products = [
         "description": "10 Litre Storage Electric Geyser.",
         "caterory": "HomeAppliances",
         "keywords": ["electric geyser", "Bajaj", "10 litre", "storage", "water heating"],
-        "model": "150770"
+        "model": "150770 Shakti PC Deluxe 10L"
     },
     {
         "name": "Bajaj Shakti PC Deluxe 15L 15 Litre Storage Electric Geyser",
@@ -154,7 +154,7 @@ const products = [
         "description": "15 Litre Storage Electric Geyser.",
         "caterory": "HomeAppliances",
         "keywords": ["electric geyser", "Bajaj", "15 litre", "storage", "water heating"],
-        "model": "150771"
+        "model": "150771 Shakti PC Deluxe 15L"
     },
     {
         "name": "Bajaj Shakti PC Deluxe 25L 25 Litre Storage Electric Geyser",
@@ -166,7 +166,7 @@ const products = [
         "description": "25 Litre Storage Electric Geyser.",
         "caterory": "HomeAppliances",
         "keywords": ["electric geyser", "Bajaj", "25 litre", "storage", "water heating"],
-        "model": "150772"
+        "model": "150772 Shakti PC Deluxe 25L"
     },
     {
         "name": "Bajaj Majesty PC Deluxe 25L 25 Litre Storage Electric Geyser",
@@ -178,7 +178,7 @@ const products = [
         "description": "25 Litre Storage Electric Geyser.",
         "caterory": "HomeAppliances",
         "keywords": ["electric geyser", "Bajaj", "25 litre", "storage", "water heating"],
-        "model": "150831"
+        "model": "150831 Majesty PC Deluxe 25L"
     },
     {
         "name": "Bajaj Mantilla 15L 15 Litre Storage Electric Geyser",
@@ -190,7 +190,7 @@ const products = [
         "description": "15 Litre Storage Electric Geyser.",
         "caterory": "HomeAppliances",
         "keywords": ["electric geyser", "Bajaj", "15 litre", "storage", "water heating"],
-        "model": "150894"
+        "model": "150894 Bajaj Mantilla 15L"
     },
     {
         "name": "Bajaj Mantilla 25L 25 Litre Storage Electric Geyser",
@@ -202,7 +202,7 @@ const products = [
         "description": "25 Litre Storage Electric Geyser.",
         "caterory": "HomeAppliances",
         "keywords": ["electric geyser", "Bajaj", "25 litre", "storage", "water heating"],
-        "model": "150895"
+        "model": "150895 Bajaj Mantilla 25L"
     },
     {
         "name": "Bajaj Compagno 10L 10 Litre Storage Electric Geyser",
@@ -214,7 +214,7 @@ const products = [
         "description": "10 Litre Storage Electric Geyser.",
         "caterory": "HomeAppliances",
         "keywords": ["electric geyser", "Bajaj", "10 litre", "storage", "water heating"],
-        "model": "150856"
+        "model": "150856 Bajaj Compagno 10L"
     },
     {
         "name": "Bajaj Compagno 25L 25 Litre Storage Electric Geyser",
@@ -226,7 +226,7 @@ const products = [
         "description": "25 Litre Storage Electric Geyser.",
         "caterory": "HomeAppliances",
         "keywords": ["electric geyser", "Bajaj", "25 litre", "storage", "water heating"],
-        "model": "150858"
+        "model": "150858 Bajaj Compagno 25L"
     },
     {
         "name": "Bajaj Maestro 10L 10 Litre Storage Electric Geyser",
@@ -238,7 +238,7 @@ const products = [
         "description": "10 Litre Storage Electric Geyser.",
         "caterory": "HomeAppliances",
         "keywords": ["electric geyser", "Bajaj", "10 litre", "storage", "water heating"],
-        "model": "150897"
+        "model": "150897 Maestro 10L"
     },
     {
         "name": "Bajaj Maestro 15L 15 Litre Storage Electric Geyser",
@@ -250,7 +250,7 @@ const products = [
         "description": "15 Litre Storage Electric Geyser.",
         "caterory": "HomeAppliances",
         "keywords": ["electric geyser", "Bajaj", "15 litre", "storage", "water heating"],
-        "model": "150898"
+        "model": "150898 Maestro 15L"
     },
     {
         "name": "Bajaj Maestro 25L 25 Litre Storage Electric Geyser",
@@ -262,7 +262,7 @@ const products = [
         "description": "25 Litre Storage Electric Geyser.",
         "caterory": "HomeAppliances",
         "keywords": ["electric geyser", "Bajaj", "25 litre", "storage", "water heating"],
-        "model": "150899"
+        "model": "150899 Maestro 25"
     },
     {
         "name": "Bajaj Armor Series Pentacle 15L (BLUE) 15 Litre Storage Electric Geyser",
@@ -274,7 +274,7 @@ const products = [
         "description": "15 Litre Storage Electric Geyser in Blue.",
         "caterory": "HomeAppliances",
         "keywords": ["electric geyser", "Bajaj", "15 litre", "blue", "storage", "water heating"],
-        "model": "150924"
+        "model": "150924 Bajaj Armor Series Pentacle 15L (BLUE)"
     },
     {
         "name": "Bajaj Armor Series Pentacle 25L (BLUE) 25 Litre Storage Electric Geyser",
@@ -286,7 +286,7 @@ const products = [
         "description": "25 Litre Storage Electric Geyser in Blue.",
         "caterory": "HomeAppliances",
         "keywords": ["electric geyser", "Bajaj", "25 litre", "blue", "storage", "water heating"],
-        "model": "150925"
+        "model": "150925 Bajaj Armor Series Pentacle 25L (BLUE)"
     },
     {
         "name": "Bajaj New Popular 750 Dry Iron",
@@ -298,7 +298,7 @@ const products = [
         "description": "750 Watt Dry Iron in White.",
         "category": "HomeAppliances",
         "keywords": ["dry iron", "Bajaj", "750 watt", "white", "home appliances"],
-        "model": "440301"
+        "model": "440301 Bajaj New Popular 750 Dry Iron"
     },
     {
         "name": "Bajaj DX 4 Neo Dry Iron 1000 Watt",
@@ -310,7 +310,7 @@ const products = [
         "description": "1000 Watt Dry Iron in White and Blue.",
         "category": "HomeAppliances",
         "keywords": ["dry iron", "Bajaj", "1000 watt", "white", "blue", "home appliances"],
-        "model": "440325"
+        "model": "440325 Bajaj DX 4 Neo Dry Iron"
     },
     {
         "name": "Bajaj DX 7 Neo Dry Iron 1000 Watt",
@@ -322,7 +322,7 @@ const products = [
         "description": "1000 Watt Dry Iron in White and Lavender.",
         "category": "HomeAppliances",
         "keywords": ["dry iron", "Bajaj", "1000 watt", "white", "lavender", "home appliances"],
-        "model": "440304"
+        "model": "440304 Bajaj DX 7 Neo Dry Iron"
     },
     {
         "name": "Bajaj Splendora Dry Iron 1100 Watt",
@@ -334,7 +334,7 @@ const products = [
         "description": "1100 Watt Dry Iron in Red and Black.",
         "category": "HomeAppliances",
         "keywords": ["dry iron", "Bajaj", "1100 watt", "red", "black", "home appliances"],
-        "model": "440314"
+        "model": "440314 Bajaj Splendora Dry Iron"
     },
     {
         "name": "Bajaj MX 4 Neo Steam Iron 1250 Watt",
@@ -346,7 +346,7 @@ const products = [
         "description": "1250 Watt Steam Iron in Purple and White.",
         "category": "HomeAppliances",
         "keywords": ["steam iron", "Bajaj", "1250 watt", "purple", "white", "home appliances"],
-        "model": "440509"
+        "model": "440509 Bajaj MX 4 Neo Steam Iron"
     },
     {
         "name": "Bajaj RHX 2 Room Heater 2 Rod Halogen Heater",
@@ -358,7 +358,7 @@ const products = [
         "description": "2 Rod Halogen Heater in White.",
         "category": "HomeAppliances",
         "keywords": ["room heater", "Bajaj", "2 rod", "halogen", "white"],
-        "model": "260028"
+        "model": "260028 Bajaj RHX 2 Room Heater"
     },
     {
         "name": "Bajaj RH3H Room Heater 3 Rod Halogen Heater",
@@ -370,7 +370,7 @@ const products = [
         "description": "3 Rod Halogen Heater in Grey.",
         "category": "HomeAppliances",
         "keywords": ["room heater", "Bajaj", "3 rod", "halogen", "grey"],
-        "model": "260089"
+        "model": "260089 Bajaj RH3H Room Heater"
     },
     {
         "name": "Bajaj RX-8 Heat Convector 2000 Watt",
@@ -382,7 +382,7 @@ const products = [
         "description": "2000 Watt Heat Convector Room Heater.",
         "category": "HomeAppliances",
         "keywords": ["room heater", "Bajaj", "2000 watt", "heat convector"],
-        "model": "260007"
+        "model": "260007 RX-8 Heat Convector"
     },
     {
         "name": "Bajaj Immersion Heater 1.5KW",
@@ -394,7 +394,7 @@ const products = [
         "description": "1.5 KW Immersion Heater Rod.",
         "category": "HomeAppliances",
         "keywords": ["immersion heater", "Bajaj", "1.5 KW"],
-        "model": "150650"
+        "model": "150650 Immersion Heater 1.5KW 25"
     },
     {
         "name": "Bajaj Water Proof Immersion Heater 1.5KW",
@@ -406,7 +406,7 @@ const products = [
         "description": "1.5 KW Waterproof Immersion Heater Rod.",
         "category": "HomeAppliances",
         "keywords": ["immersion heater", "Bajaj", "waterproof", "1.5 KW"],
-        "model": "150833"
+        "model": "150833 Water Proof Immersion Heater 1.5KW"
     }
 ]
 
