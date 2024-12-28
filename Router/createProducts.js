@@ -42,26 +42,19 @@ router.post('/products', async (req, res) => {
 
 
 
-// Get products, optionally filter by category or brand
+// Get all products or filter by category
 router.get('/products', async (req, res) => {
     try {
-        const { category, brand } = req.query;  // Get the category and brand from query parameters
-        let matchCriteria = {};
+        const { category } = req.query;  // Get the category from query parameters
+        let products;
 
-        // Add category filter if provided
-        if (category) {
-            matchCriteria.category = category;
-        }
-
-        // Add brand filter if provided
-        if (brand) {
-            matchCriteria.brand = brand;
-        }
+        // If a category is provided, filter by category; otherwise, include all categories
+        const matchCriteria = category ? { category: category } : {};
 
         // Aggregate to group by 'model' and get unique products based on their model
-        const products = await Product.aggregate([
+        products = await Product.aggregate([
             {
-                $match: matchCriteria  // Match by category and/or brand if specified
+                $match: matchCriteria  // Match by category if specified
             },
             {
                 $group: {
@@ -80,6 +73,16 @@ router.get('/products', async (req, res) => {
     }
 });
 
+//get products by brand
+router.get('/products/:brand', async (req, res) => {
+    try {
+        const { brand } = req.params;  // Get the brand from URL parameters
+        const products = await Product.find({ brand: brand });  // Find products by brand
+        res.status(200).json(products);  // Send products to the client
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+});
 
 
 
