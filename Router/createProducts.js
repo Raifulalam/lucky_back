@@ -43,8 +43,7 @@ router.post('/products', async (req, res) => {
 
 router.get('/products', async (req, res) => {
     try {
-        const { category } = req.query;  // Get the category from query parameters
-        const { brand } = req.params;    // Get the brand from URL parameters
+        const { category, brand } = req.query;  // Get category and brand from query parameters
 
         let matchCriteria = {};  // Default empty match criteria
 
@@ -53,7 +52,7 @@ router.get('/products', async (req, res) => {
             matchCriteria.category = category;
         }
 
-        // Add brand condition if provided (and the brand is part of the URL parameter)
+        // Add brand condition if provided
         if (brand) {
             matchCriteria.brand = brand;
         }
