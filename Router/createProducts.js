@@ -43,18 +43,20 @@ router.post('/products', async (req, res) => {
 
 router.get('/products', async (req, res) => {
     try {
-        const { category, brand } = req.query;  // Get category and brand from query parameters
+        const { param } = req.query;  // Get category and brand from query parameters
 
         let matchCriteria = {};  // Default empty match criteria
 
-        // Add category condition if provided
-        if (category) {
-            matchCriteria.category = category;
-        }
+        // Check if param exists, then try to match either category or brand
+        if (param) {
+            // You can add a check to distinguish between category and brand if needed,
+            // such as checking the format of the 'param'. Here, we assume it's either one of the two.
 
-        // Add brand condition if provided
-        if (brand) {
-            matchCriteria.brand = brand;
+            // Match either by category or by brand
+            matchCriteria.$or = [
+                { category: param },  // Match by category
+                { brand: param }      // Match by brand
+            ];
         }
 
         // Aggregate to group by 'model' and get unique products based on their model
@@ -78,6 +80,7 @@ router.get('/products', async (req, res) => {
         res.status(500).json({ message: err.message });
     }
 });
+
 
 
 
