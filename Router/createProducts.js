@@ -41,28 +41,20 @@ router.post('/products', async (req, res) => {
 });
 
 
+
+// Get all products or filter by category
 router.get('/products', async (req, res) => {
     try {
-        const { param } = req.query;  // Get category and brand from query parameters
+        const { category } = req.query;  // Get the category from query parameters
+        let products;
 
-        let matchCriteria = {};  // Default empty match criteria
-
-        // Check if param exists, then try to match either category or brand
-        if (param) {
-            // You can add a check to distinguish between category and brand if needed,
-            // such as checking the format of the 'param'. Here, we assume it's either one of the two.
-
-            // Match either by category or by brand
-            matchCriteria.$or = [
-                { category: param },  // Match by category
-                { brand: param }      // Match by brand
-            ];
-        }
+        // If a category is provided, filter by category; otherwise, include all categories
+        const matchCriteria = category ? { category: category } : {};
 
         // Aggregate to group by 'model' and get unique products based on their model
-        const products = await Product.aggregate([
+        products = await Product.aggregate([
             {
-                $match: matchCriteria  // Apply filters for category and/or brand
+                $match: matchCriteria  // Match by category if specified
             },
             {
                 $group: {
@@ -81,8 +73,16 @@ router.get('/products', async (req, res) => {
     }
 });
 
-
-
+//get products by brand
+router.get('/products/:brand', async (req, res) => {
+    try {
+        const { brand } = req.params;  // Get the brand from URL parameters
+        const products = await Product.find({ brand: brand });  // Find products by brand
+        res.status(200).json(products);  // Send products to the client
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+});
 
 
 
