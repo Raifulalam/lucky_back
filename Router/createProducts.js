@@ -82,6 +82,7 @@ router.get('/products', async (req, res) => {
 
 
 
+
 // Get a product by ID
 router.get('/productsDetails/:id', async (req, res) => {
     try {
