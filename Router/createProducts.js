@@ -48,42 +48,43 @@ router.get('/products', async (req, res) => {
         const { category } = req.query;
         const matchCriteria = category ? { category: category } : {};
 
-        // First, identify and remove duplicates based on the 'model' field
-        const duplicates = await Product.aggregate([
+        // Identify and delete duplicates by grouping by 'model' and keeping one document per model
+        // This query removes duplicates in a single step
+        await Product.aggregate([
             { $match: matchCriteria },  // Match by category if specified
             {
                 $group: {
-                    _id: "$model",  // Group by model to identify duplicates
-                    productDetails: { $first: "$$ROOT" },  // Get the first occurrence of each model
-                    count: { $sum: 1 }  // Count the number of occurrences of each model
+                    _id: "$model",  // Group by model
+                    productDetails: { $first: "$$ROOT" },  // Keep the first document in each group
+                    idsToDelete: { $push: "$_id" }  // Push all document ids in the group
                 }
             },
             {
-                $match: { count: { $gt: 1 } }  // Only keep groups with more than 1 document (duplicates)
+                $project: {
+                    _id: 0,
+                    idsToDelete: { $slice: ["$idsToDelete", 1, { $size: "$idsToDelete" }] } // Keep only duplicates, exclude the first document
+                }
             }
-        ]);
-
-        // Now delete the duplicates from the collection
-        for (let duplicate of duplicates) {
+        ]).forEach(async (duplicateGroup) => {
+            // Remove duplicates for each model, keeping the first document
             await Product.deleteMany({
-                model: duplicate._id,  // Find documents with the same model
-                _id: { $ne: duplicate.productDetails._id }  // Exclude the one to keep
+                _id: { $in: duplicateGroup.idsToDelete }  // Delete the documents with duplicate ids
             });
-        }
+        });
 
-        // After duplicates are deleted, fetch the remaining products (unique models)
+        // Fetch the remaining unique products after deletion
         const products = await Product.aggregate([
             { $match: matchCriteria },  // Match by category if specified
             {
                 $group: {
                     _id: "$model",  // Group by model to get unique products
-                    productDetails: { $first: "$$ROOT" }  // Get the first document for each unique model
+                    productDetails: { $first: "$$ROOT" }  // Get the first document for each model
                 }
             },
             { $replaceRoot: { newRoot: "$productDetails" } }  // Replace root with the product details
         ]);
 
-        res.status(200).json(products);  // Send the unique products back to the client
+        res.status(200).json(products);  // Send the cleaned products back to the client
     } catch (err) {
         res.status(500).json({ message: err.message });
     }
