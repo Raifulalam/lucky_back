@@ -45,33 +45,51 @@ router.post('/products', async (req, res) => {
 // Get all products or filter by category
 router.get('/products', async (req, res) => {
     try {
-        const { category } = req.query;  // Get the category from query parameters
+        const { category } = req.query;
         let products;
-
-        // If a category is provided, filter by category; otherwise, include all categories
         const matchCriteria = category ? { category: category } : {};
 
-        // Aggregate to group by 'model' and get unique products based on their model
+        // First, remove duplicates from the database
+        await Product.aggregate([
+            {
+                $match: matchCriteria  // Match by category if specified
+            },
+            {
+                $group: {
+                    _id: "$model",  // Group by model to identify duplicates
+                    productDetails: { $first: "$$ROOT" }  // Get the first occurrence of each model
+                }
+            }
+        ]).forEach(async (duplicate) => {
+            // Remove the other duplicates by their model, keeping only one document
+            await Product.deleteMany({
+                model: duplicate._id,  // Delete documents with the same model
+                _id: { $ne: duplicate.productDetails._id }  // Exclude the one to keep
+            });
+        });
+
+        // Now that duplicates are deleted, fetch the remaining products
         products = await Product.aggregate([
             {
                 $match: matchCriteria  // Match by category if specified
             },
             {
                 $group: {
-                    _id: "$model",  // Group by model to ensure uniqueness
-                    productDetails: { $first: "$$ROOT" }  // Keep the first product document per model
+                    _id: "$model",  // Group by model to get unique products
+                    productDetails: { $first: "$$ROOT" }
                 }
             },
             {
-                $replaceRoot: { newRoot: "$productDetails" }  // Flatten the document structure
+                $replaceRoot: { newRoot: "$productDetails" }  // Replace root with the product details
             }
         ]);
 
-        res.status(200).json(products);  // Send unique products based on model to the client
+        res.status(200).json(products);
     } catch (err) {
         res.status(500).json({ message: err.message });
     }
 });
+
 
 //get products by brand
 router.get('/products/:brand', async (req, res) => {
