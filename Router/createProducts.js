@@ -46,49 +46,49 @@ router.post('/products', async (req, res) => {
 router.get('/products', async (req, res) => {
     try {
         const { category } = req.query;
-        let products;
         const matchCriteria = category ? { category: category } : {};
 
-        // First, remove duplicates from the database
-        await Product.aggregate([
-            {
-                $match: matchCriteria  // Match by category if specified
-            },
+        // First, identify and remove duplicates based on the 'model' field
+        const duplicates = await Product.aggregate([
+            { $match: matchCriteria },  // Match by category if specified
             {
                 $group: {
                     _id: "$model",  // Group by model to identify duplicates
-                    productDetails: { $first: "$$ROOT" }  // Get the first occurrence of each model
-                }
-            }
-        ]).forEach(async (duplicate) => {
-            // Remove the other duplicates by their model, keeping only one document
-            await Product.deleteMany({
-                model: duplicate._id,  // Delete documents with the same model
-                _id: { $ne: duplicate.productDetails._id }  // Exclude the one to keep
-            });
-        });
-
-        // Now that duplicates are deleted, fetch the remaining products
-        products = await Product.aggregate([
-            {
-                $match: matchCriteria  // Match by category if specified
-            },
-            {
-                $group: {
-                    _id: "$model",  // Group by model to get unique products
-                    productDetails: { $first: "$$ROOT" }
+                    productDetails: { $first: "$$ROOT" },  // Get the first occurrence of each model
+                    count: { $sum: 1 }  // Count the number of occurrences of each model
                 }
             },
             {
-                $replaceRoot: { newRoot: "$productDetails" }  // Replace root with the product details
+                $match: { count: { $gt: 1 } }  // Only keep groups with more than 1 document (duplicates)
             }
         ]);
 
-        res.status(200).json(products);
+        // Now delete the duplicates from the collection
+        for (let duplicate of duplicates) {
+            await Product.deleteMany({
+                model: duplicate._id,  // Find documents with the same model
+                _id: { $ne: duplicate.productDetails._id }  // Exclude the one to keep
+            });
+        }
+
+        // After duplicates are deleted, fetch the remaining products (unique models)
+        const products = await Product.aggregate([
+            { $match: matchCriteria },  // Match by category if specified
+            {
+                $group: {
+                    _id: "$model",  // Group by model to get unique products
+                    productDetails: { $first: "$$ROOT" }  // Get the first document for each unique model
+                }
+            },
+            { $replaceRoot: { newRoot: "$productDetails" } }  // Replace root with the product details
+        ]);
+
+        res.status(200).json(products);  // Send the unique products back to the client
     } catch (err) {
         res.status(500).json({ message: err.message });
     }
 });
+
 
 
 //get products by brand
